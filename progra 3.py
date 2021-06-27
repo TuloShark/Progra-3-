@@ -1,218 +1,75 @@
+#================================================IMPORTS================================================#
+
 import tkinter
 import random
 from tkinter import messagebox
 
+#===============================================VARIABLES===============================================#
+
 dificultad = "FACIL"
-
 control_reloj = "Si"
-
 panel = "Derecha"
-
 numero_manejado = 0
-
 botton_num_1 = 0
 botton_num_2 = 0
 botton_num_3 = 0
 botton_num_4 = 0
 botton_num_5 = 0
-
 casilla1_1 = 0
 casilla2_1 = 0
 casilla3_1 = 0
 casilla4_1 = 0
 casilla5_1 = 0
-
 casilla1_2 = 0
 casilla2_2 = 0
 casilla3_2 = 0
 casilla4_2 = 0
 casilla5_2 = 0
-
 casilla1_3 = 0
 casilla2_3 = 0
 casilla3_3 = 0
 casilla4_3 = 0
 casilla5_3 = 0
-
 casilla1_4 = 0
 casilla2_4 = 0
 casilla3_4 = 0
 casilla4_4 = 0
 casilla5_4 = 0
-
 casilla1_5 = 0
 casilla2_5 = 0
 casilla3_5 = 0
 casilla4_5 = 0
 casilla5_5 = 0
-
 iniciar_activado = 0
-
 hora_numero = 0
 minuto_numero = 0
 segundo_numero = 0
-
 hora_terminado = 0
 minuto_terminado = 0
 segundo_terminado = 0
-
 suerte = 0
-
 desactivar = 0
-
 ventana_jugar = 0
-
 borrar = False
-
 botton_pri_1 = 0
 botton_pri_2 = 0
 botton_pri_3 = 0
 botton_pri_4 = 0
-
-top_10_facil = []
+top_10_facil = [("NOMBRE1",0, ':', 0, ':', 5),("NOMBRE2",0, ':', 0, ':', 45),("NOMBRE3",0, ':', 0, ':', 54),("NOMBRE4",0, ':', 0, ':', 7),("NOMBRE5",0, ':', 0, ':', 5),("NOMBRE6",0, ':', 0, ':', 5),("NOMBRE7",0, ':', 0, ':', 5),("NOMBRE8",0, ':', 0, ':', 5),("NOMBRE9",0, ':', 0, ':', 5),("NOMBRE10",1, ':',34, ':', 5)]
 top_10_medio = []
 top_10_dificil = []
-
+entrada_hora = 0
+entrada_minuto = 0
+entrada_segundo = 0
+botton_timer = 0
 jugador = 0
+hora_si_terminado = 0
+minuto_si_terminado = 0
+segundo_si_terminado = 0
+texto = 0
 
-#=======================================================================================================#
-
-def jugar():
-    
-    global dificultad
-    global ventana
-    global botton_num_1
-    global botton_num_2
-    global botton_num_3
-    global botton_num_4
-    global botton_num_5
-    global panel
-    global control_reloj
-    global hora_numero
-    global minuto_numero
-    global segundo_numero
-    global suerte
-    global desactivar
-    global iniciar_activado
-    global ventana_jugar
-    global numero_manejado
-    global borrar
-    global botton_pri_1
-    global botton_pri_2
-    global botton_pri_3
-    global botton_pri_4
-    global jugador
-    
-    ventana.state(newstate="withdraw")
-    ventana_jugar = tkinter.Tk()
-    ventana_jugar.title("VENTANA PRINCIPAL")
-    ventana_jugar.geometry("578x700")
-    ventana_jugar.config(bg="#FFECEC")
-
-    iniciar_activado = False
-    desactivar = 0
-
-    numero_manejado = 0
-
-    borde1 = tkinter.Canvas(ventana_jugar, bg="#FFEA82", height=43, width=181).place(x=195,y=30)    
-    borde2 = tkinter.Canvas(ventana_jugar, bg="#B9FFDE", height=20, width=193).place(x=0,y=40)
-    borde3 = tkinter.Canvas(ventana_jugar, bg="#FFB9FE", height=20, width=193).place(x=381,y=40)
-
-    futoshiki = tkinter.Label(ventana_jugar, text="FUTOSHIKI", font=("Times", "24", "bold italic"), fg="white")
-    futoshiki.config(bg="#AAAAAA")
-    futoshiki.place(x=200,y=30)
-
-    jugador = tkinter.Entry(ventana_jugar, width=30)
-    jugador.place(x=198, y=120)    
-
-    enunciado1 = tkinter.Label(ventana_jugar, text="Nombre del jugador:",bg="#FFECEC").place(x=70,y=120)
-    enunciado2 = tkinter.Label(ventana_jugar, text="NIVEL "+ dificultad,bg="#FFECEC").place(x=255, y=95)
-
-    if panel == "Derecha":
-        botton_num_1 = tkinter.Button(ventana_jugar, text="1", height=2, width=5, command=activado_1)
-        botton_num_1.place(x=487,y=200)
-        botton_num_2 = tkinter.Button(ventana_jugar, text="2", height=2, width=5, command=activado_2)
-        botton_num_2.place(x=487,y=240)
-        botton_num_3 = tkinter.Button(ventana_jugar, text="3", height=2, width=5, command=activado_3)
-        botton_num_3.place(x=487,y=280)
-        botton_num_4 = tkinter.Button(ventana_jugar, text="4", height=2, width=5, command=activado_4)
-        botton_num_4.place(x=487,y=320)  
-        botton_num_5 = tkinter.Button(ventana_jugar, text="5", height=2, width=5, command=activado_5)
-        botton_num_5.place(x=487,y=360)
-    if panel == "Izquierda":
-        botton_num_1 = tkinter.Button(ventana_jugar, text="1", height=2, width=5, command=activado_1)
-        botton_num_1.place(x=50,y=200)
-        botton_num_2 = tkinter.Button(ventana_jugar, text="2", height=2, width=5, command=activado_2)
-        botton_num_2.place(x=50,y=240)
-        botton_num_3 = tkinter.Button(ventana_jugar, text="3", height=2, width=5, command=activado_3)
-        botton_num_3.place(x=50,y=280)
-        botton_num_4 = tkinter.Button(ventana_jugar, text="4", height=2, width=5, command=activado_4)
-        botton_num_4.place(x=50,y=320)  
-        botton_num_5 = tkinter.Button(ventana_jugar, text="5", height=2, width=5, command=activado_5)
-        botton_num_5.place(x=50,y=360)
-
-    if control_reloj == "Si" or control_reloj == "Timer":
-        fondo = tkinter.Canvas(ventana_jugar,bg="#FFEA82", height=70, width=182)
-        fondo.place(x=30,y=560)
-        horas_reloj = tkinter.Label(ventana_jugar, text="Horas",bg="#99FFA6",width=8)
-        horas_reloj.place(x=32,y=550)
-        minutos_reloj = tkinter.Label(ventana_jugar, text="Minutos",bg="#B9FFDE",width=8)
-        minutos_reloj.place(x=92,y=550)
-        segundos_reloj = tkinter.Label(ventana_jugar, text="Segundos",bg="#FFB9FE",width=8)
-        segundos_reloj.place(x=152,y=550)
-        hora_numero = tkinter.Label(ventana_jugar, text=0,bg="#FFEA82")
-        hora_numero.place(x=58,y=590)
-        minuto_numero = tkinter.Label(ventana_jugar, text=0,bg="#FFEA82")
-        minuto_numero.place(x=118,y=590)
-        segundo_numero = tkinter.Label(ventana_jugar, text=0,bg="#FFEA82")
-        segundo_numero.place(x=178,y=590)
-
-    botton_pri_1 = tkinter.Button(ventana_jugar, text="INICIAR JUEGO", height=2, width=13, bg="#99FFA6", command=inicio)
-    botton_pri_1.place(x=20, y=480)
-    botton_pri_2 = tkinter.Button(ventana_jugar, text="BORRAR JUGADA", height=2, width=13, bg="#FFB9FE")
-    botton_pri_2.place(x=130, y=480)
-    botton_pri_2["state"] = "disabled"
-    botton_pri_3 = tkinter.Button(ventana_jugar, text="TERMINAR JUEGO", height=2, width=13, bg="#B9FFDE", command=lambda: terminar_juego(ventana_jugar))
-    botton_pri_3.place(x=240, y=480)
-    botton_pri_3["state"] = "disabled"
-    botton_pri_4 = tkinter.Button(ventana_jugar, text="BORRAR JUEGO", height=2, width=13, bg="#FFB9FE",command=lambda: borrar_el_juego(ventana_jugar))
-    botton_pri_4.place(x=350, y=480)
-    botton_pri_4["state"] = "disabled"
-    botton_pri_5 = tkinter.Button(ventana_jugar, text="TOP 10", height=2, width=13, bg="#99FFA6")
-    botton_pri_5.place(x=460, y=480)
-
-    botton_regreso = tkinter.Button(ventana_jugar,text="X",command=lambda: regreso(ventana_jugar,ventana))
-    botton_regreso.place(x=558,y=65)
-
-    if borrar == False:                  
-        suerte = random.randint(1,3)
-    if borrar == True:
-        borrar = False
-
-    if dificultad == "FACIL":
-        if suerte == 1:
-            juego_facil_1(ventana_jugar)
-        elif suerte == 2:
-            juego_facil_2(ventana_jugar)
-        elif suerte == 3:
-            juego_facil_3(ventana_jugar)
-    if dificultad == "MEDIO":
-        if suerte == 1:
-            juego_intermedio_1(ventana_jugar)
-        if suerte == 2:
-            juego_intermedio_2(ventana_jugar)
-        if suerte == 3:
-            juego_intermedio_3(ventana_jugar)
-    if dificultad == "DIFICIL":
-        if suerte == 1:
-            juego_dificil_1(ventana_jugar)
-        if suerte == 2:
-            juego_dificil_2(ventana_jugar)
-        if suerte == 3:
-            juego_dificil_3(ventana_jugar)
-
-    return ganador()
-            
+parada_final = 0
+           
 #================================================JUEGO 1================================================#
 
 #=================================================FACIL=================================================#
@@ -6136,13 +5993,36 @@ def inicio():
     global botton_pri_3
     global botton_pri_4
     global jugador
+    global control_reloj
+    global botton_timer
+    global top_10_facil
+    global top_10_medio
+    global top_10_dificil
+    global texto
+    
+    if control_reloj == "Timer":
+        if botton_timer["state"] != "disabled":
+            return messagebox.showinfo(message="DEBE CONFIGURAR EL TIMER PRIMERO")
     
     texto = str(jugador.get())
+    
     if texto == "":
         return messagebox.showinfo(message="DEBE DIGITAR UN NOMBRE PRIMERO")
     if len(texto) > 20:
         return messagebox.showinfo(message="EL NOMBRE DEBE DE ESTAR ENRTE 1 Y 20 CARACTERES")
 
+    for elemento in top_10_facil:
+        if elemento[0] == texto:
+            return messagebox.showinfo(message="EL NOMBRE YA SE ENCUENTRA EN EL TOP")
+
+    for elemento in top_10_medio:
+        if elemento[0] == texto:
+            return messagebox.showinfo(message="EL NOMBRE YA SE ENCUENTRA EN EL TOP")
+
+    for elemento in top_10_dificil:
+        if elemento[0] == texto:
+            return messagebox.showinfo(message="EL NOMBRE YA SE ENCUENTRA EN EL TOP")
+    
     iniciar_activado = True
     
     botton_pri_2["state"] = "normal"
@@ -6160,21 +6040,58 @@ def tiempo():
     global segundo_numero
     global desactivar
     global iniciar_activado
+    global control_reloj
+    global hora_si_terminado
+    global minuto_si_terminado
+    global segundo_si_terminado
+    global parada_final 
+
+    if control_reloj == "No":
+        return messagebox.showinfo(message="NO ESTA PARTICIPANDO PARA EL TOP 10")
 
     if iniciar_activado == True:
         segundo = segundo_numero["text"]   
         minuto = minuto_numero["text"]
         hora = hora_numero["text"]
-        if segundo == 59:
-            minuto_numero.config(text=minuto+1)
-            segundo = -1       
-            if minuto == 59:
-                hora_numero.config(text=hora+1)
-                minuto = -1
+        
+        if control_reloj == "Si":
+            if segundo == 59:
                 minuto_numero.config(text=minuto+1)
-        segundo_numero.config(text=segundo+1)
-        actualizar = tkinter.Label()
-        actualizar.after(1000,tiempo)
+                segundo = -1       
+                if minuto == 59:
+                    hora_numero.config(text=hora+1)
+                    minuto = -1
+                    minuto_numero.config(text=minuto+1)
+            segundo_numero.config(text=segundo+1)
+
+            if parada_final != True:           
+                actualizar = tkinter.Label()
+                actualizar.after(1000,tiempo)
+
+        if control_reloj == "Timer":
+            if segundo == 0 and minuto == 0 and hora == 0:
+                mensaje = messagebox.askquestion(message="SE HA ACABADO EL TIEMPO, ¿DESEA CONTINUAR?")
+                if mensaje == "no":
+                    return jugar()
+                if mensaje == "yes":
+                    control_reloj = "Si"
+                    minuto_numero.config(text=minuto_si_terminado)
+                    segundo_numero.config(text=segundo_si_terminado)
+                    hora_numero.config(text=hora_si_terminado) 
+                    return tiempo()
+            if segundo == 0:
+                minuto_numero.config(text=minuto-1)
+                segundo = 60       
+                if minuto == 0:
+                    hora_numero.config(text=hora-1)
+                    minuto = 60
+                    minuto_numero.config(text=minuto-1)
+            segundo_numero.config(text=segundo-1)
+
+            if parada_final != True:
+                actualizar = tkinter.Label()
+                actualizar.after(1000,tiempo)
+
     else:
         minuto_numero.config(text=0)
         segundo_numero.config(text=0)
@@ -6194,21 +6111,269 @@ def borrar_el_juego(ventana_jugar):
             return jugar()
 
 def terminar_juego(ventana_jugar):
-
     global iniciar_activado
-
     if iniciar_activado == True:
         mensaje = messagebox.askquestion(message="¿ESTÁ SEGURO DE TERMINAR EL JUEGO?")
         if mensaje == "yes":
             ventana_jugar.destroy()        
             return jugar()
-    
 
 def regreso(x,y):
-    
     x.destroy()
     y.deiconify()
+
+def confirmar():
+    global entrada_hora
+    global entrada_minuto
+    global entrada_segundo
+    global hora_numero
+    global minuto_numero
+    global segundo_numero
+    global botton_timer
+    global hora_si_terminado
+    global minuto_si_terminado
+    global segundo_si_terminado
+
+    hora = entrada_hora.get()
+    minuto = entrada_minuto.get()
+    segundo = entrada_segundo.get()
+
+    if hora == "":
+        hora = 0
+    if minuto == "":
+        minuto = 0
+    if segundo == "":
+        segundo = 0
+
+    if hora == 0 and minuto == 0 and segundo == 0:
+        return messagebox.showinfo(message="DEBE DIGITAR UN TIEMPO VALIDO")
+
+    hora = int(hora)
+    minuto = int(minuto)
+    segundo = int(segundo)
     
+    if hora < 0 or hora > 2:
+        return messagebox.showinfo(message="LAS HORAS DEBEN ESTAR ENTRE 0 Y 2")
+    if minuto < 0 or minuto > 59:
+        return messagebox.showinfo(message="LOS MINUTOS DEBEN DE ESTAR ENTRE 0 Y 59")
+    if segundo < 0 or segundo > 59:
+        return messagebox.showinfo(message="LOS SEGUNDOS DEBEN DE ESTAR ENTRE 0 Y 59")
+
+    hora_numero.config(text=hora)
+    minuto_numero.config(text=minuto)
+    segundo_numero.config(text=segundo)
+
+    hora_si_terminado = hora
+    minuto_si_terminado = minuto
+    segundo_si_terminado = segundo
+    
+    botton_timer["state"] = "disabled"
+
+#=======================================================================================================#
+
+def top_10_todos():
+    
+    ventana_top = tkinter.Tk()
+    ventana_top.title("VENTANA PRINCIPAL")
+    ventana_top.geometry("670x300")
+
+    global top_10_facil
+    global top_10_medio
+    global top_10_dificil
+
+    y_todos = 40
+    nivel_facil = tkinter.Label(ventana_top,text="NIVEL FACIL:")
+    nivel_facil.place(x=10,y=10)
+    
+    for ind, elemento in enumerate(top_10_facil,start=1):
+        clock = ""
+        for x in elemento[1:]:
+            clock = clock+str(x)
+    
+        top_facil = tkinter.Label(ventana_top,text=str(ind)+" - "+elemento[0]+" - "+clock)
+        top_facil.place(x=40,y=y_todos)
+        y_todos+=20
+
+    y_todos = 40
+    nivel_medio = tkinter.Label(ventana_top,text="NIVEL MEDIO:")
+    nivel_medio.place(x=240,y=10)
+    
+    for ind, elemento in enumerate(top_10_medio,start=1):
+        clock = ""
+        for x in elemento[1:]:
+            clock = clock+str(x)
+            
+        top_medio = tkinter.Label(ventana_top,text=str(ind)+" - "+elemento[0]+" - "+clock)
+        top_medio.place(x=270,y=y_todos)
+        y_todos+=20
+
+    y_todos = 40
+    nivel_dificil = tkinter.Label(ventana_top,text="NIVEL DIFICIL:")
+    nivel_dificil.place(x=470,y=10)
+    
+    for ind, elemento in enumerate(top_10_dificil,start=1):
+        clock = ""
+        for x in elemento[1:]:
+            clock = clock+str(x)
+            
+        top_medio = tkinter.Label(ventana_top,text=str(ind)+" - "+elemento[0]+" - "+clock)
+        top_medio.place(x=500,y=y_todos)
+        y_todos+=20
+
+#=======================================================================================================#
+
+def jugar():
+    
+    global dificultad
+    global ventana
+    global botton_num_1
+    global botton_num_2
+    global botton_num_3
+    global botton_num_4
+    global botton_num_5
+    global panel
+    global control_reloj
+    global hora_numero
+    global minuto_numero
+    global segundo_numero
+    global suerte
+    global desactivar
+    global iniciar_activado
+    global ventana_jugar
+    global numero_manejado
+    global borrar
+    global botton_pri_1
+    global botton_pri_2
+    global botton_pri_3
+    global botton_pri_4
+    global jugador
+    global entrada_hora
+    global entrada_minuto
+    global entrada_segundo
+    global botton_timer
+    global parada_final
+    
+    ventana.state(newstate="withdraw")
+    ventana_jugar = tkinter.Tk()
+    ventana_jugar.title("VENTANA PRINCIPAL")
+    ventana_jugar.geometry("578x700")
+    ventana_jugar.config(bg="#FFECEC")
+
+    iniciar_activado = False
+    parada_final = False
+    desactivar = 0
+
+    numero_manejado = 0
+
+    borde1 = tkinter.Canvas(ventana_jugar, bg="#FFEA82", height=43, width=181).place(x=195,y=30)    
+    borde2 = tkinter.Canvas(ventana_jugar, bg="#B9FFDE", height=20, width=193).place(x=0,y=40)
+    borde3 = tkinter.Canvas(ventana_jugar, bg="#FFB9FE", height=20, width=193).place(x=381,y=40)
+
+    futoshiki = tkinter.Label(ventana_jugar, text="FUTOSHIKI", font=("Times", "24", "bold italic"), fg="white")
+    futoshiki.config(bg="#AAAAAA")
+    futoshiki.place(x=200,y=30)
+
+    jugador = tkinter.Entry(ventana_jugar, width=30)
+    jugador.place(x=198, y=120)    
+
+    enunciado1 = tkinter.Label(ventana_jugar, text="Nombre del jugador:",bg="#FFECEC").place(x=70,y=120)
+    enunciado2 = tkinter.Label(ventana_jugar, text="NIVEL "+ dificultad,bg="#FFECEC").place(x=255, y=95)
+
+    if panel == "Derecha":
+        botton_num_1 = tkinter.Button(ventana_jugar, text="1", height=2, width=5, command=activado_1)
+        botton_num_1.place(x=487,y=200)
+        botton_num_2 = tkinter.Button(ventana_jugar, text="2", height=2, width=5, command=activado_2)
+        botton_num_2.place(x=487,y=240)
+        botton_num_3 = tkinter.Button(ventana_jugar, text="3", height=2, width=5, command=activado_3)
+        botton_num_3.place(x=487,y=280)
+        botton_num_4 = tkinter.Button(ventana_jugar, text="4", height=2, width=5, command=activado_4)
+        botton_num_4.place(x=487,y=320)  
+        botton_num_5 = tkinter.Button(ventana_jugar, text="5", height=2, width=5, command=activado_5)
+        botton_num_5.place(x=487,y=360)
+    if panel == "Izquierda":
+        botton_num_1 = tkinter.Button(ventana_jugar, text="1", height=2, width=5, command=activado_1)
+        botton_num_1.place(x=50,y=200)
+        botton_num_2 = tkinter.Button(ventana_jugar, text="2", height=2, width=5, command=activado_2)
+        botton_num_2.place(x=50,y=240)
+        botton_num_3 = tkinter.Button(ventana_jugar, text="3", height=2, width=5, command=activado_3)
+        botton_num_3.place(x=50,y=280)
+        botton_num_4 = tkinter.Button(ventana_jugar, text="4", height=2, width=5, command=activado_4)
+        botton_num_4.place(x=50,y=320)  
+        botton_num_5 = tkinter.Button(ventana_jugar, text="5", height=2, width=5, command=activado_5)
+        botton_num_5.place(x=50,y=360)
+
+    if control_reloj == "Si" or control_reloj == "Timer":
+        fondo = tkinter.Canvas(ventana_jugar,bg="#FFEA82", height=70, width=182)
+        fondo.place(x=30,y=560)
+        horas_reloj = tkinter.Label(ventana_jugar, text="Horas",bg="#99FFA6",width=8)
+        horas_reloj.place(x=32,y=550)
+        minutos_reloj = tkinter.Label(ventana_jugar, text="Minutos",bg="#B9FFDE",width=8)
+        minutos_reloj.place(x=92,y=550)
+        segundos_reloj = tkinter.Label(ventana_jugar, text="Segundos",bg="#FFB9FE",width=8)
+        segundos_reloj.place(x=152,y=550)
+        hora_numero = tkinter.Label(ventana_jugar, text=0,bg="#FFEA82")
+        hora_numero.place(x=58,y=590)
+        minuto_numero = tkinter.Label(ventana_jugar, text=0,bg="#FFEA82")
+        minuto_numero.place(x=118,y=590)
+        segundo_numero = tkinter.Label(ventana_jugar, text=0,bg="#FFEA82")
+        segundo_numero.place(x=178,y=590)
+
+    if control_reloj == "Timer":
+        entrada_hora = tkinter.Entry(ventana_jugar,width=10)
+        entrada_hora.place(x=33,y=650)
+        entrada_minuto = tkinter.Entry(ventana_jugar,width=10)
+        entrada_minuto.place(x=90,y=650)
+        entrada_segundo = tkinter.Entry(ventana_jugar,width=10)
+        entrada_segundo.place(x=153,y=650)
+        botton_timer = tkinter.Button(ventana_jugar,text="Timer",bg="#FFEA82",command=confirmar)
+        botton_timer.place(x=220,y=647)
+
+    botton_pri_1 = tkinter.Button(ventana_jugar, text="INICIAR JUEGO", height=2, width=13, bg="#99FFA6", command=inicio)
+    botton_pri_1.place(x=20, y=480)
+    botton_pri_2 = tkinter.Button(ventana_jugar, text="BORRAR JUGADA", height=2, width=13, bg="#FFB9FE")
+    botton_pri_2.place(x=130, y=480)
+    botton_pri_2["state"] = "disabled"
+    botton_pri_3 = tkinter.Button(ventana_jugar, text="TERMINAR JUEGO", height=2, width=13, bg="#B9FFDE", command=lambda: terminar_juego(ventana_jugar))
+    botton_pri_3.place(x=240, y=480)
+    botton_pri_3["state"] = "disabled"
+    botton_pri_4 = tkinter.Button(ventana_jugar, text="BORRAR JUEGO", height=2, width=13, bg="#FFB9FE",command=lambda: borrar_el_juego(ventana_jugar))
+    botton_pri_4.place(x=350, y=480)
+    botton_pri_4["state"] = "disabled"
+    botton_pri_5 = tkinter.Button(ventana_jugar, text="TOP 10", height=2, width=13, bg="#99FFA6", command=top_10_todos)
+    botton_pri_5.place(x=460, y=480)
+
+    botton_regreso = tkinter.Button(ventana_jugar,text="X",command=lambda: regreso(ventana_jugar,ventana))
+    botton_regreso.place(x=558,y=65)
+
+    if borrar == False:                  
+        suerte = random.randint(1,3)
+    if borrar == True:
+        borrar = False
+
+    if dificultad == "FACIL":
+        if suerte == 1:
+            juego_facil_1(ventana_jugar)
+        elif suerte == 2:
+            juego_facil_2(ventana_jugar)
+        elif suerte == 3:
+            juego_facil_3(ventana_jugar)
+    if dificultad == "MEDIO":
+        if suerte == 1:
+            juego_intermedio_1(ventana_jugar)
+        if suerte == 2:
+            juego_intermedio_2(ventana_jugar)
+        if suerte == 3:
+            juego_intermedio_3(ventana_jugar)
+    if dificultad == "DIFICIL":
+        if suerte == 1:
+            juego_dificil_1(ventana_jugar)
+        if suerte == 2:
+            juego_dificil_2(ventana_jugar)
+        if suerte == 3:
+            juego_dificil_3(ventana_jugar)
+
+    return ganador()
+        
 #==============================================CONFIGURACION============================================#
 
 def config():
@@ -6241,7 +6406,7 @@ def config():
     reloj_si.place(x=50,y=180)
     reloj_no = tkinter.Checkbutton(ventana_config, text="No",command=lambda: actualizar_reloj_2(reloj_no,reloj_si,timer))
     reloj_no.place(x=50,y=205)
-    timer = tkinter.Checkbutton(ventana_config, text="Timer",command=lambda: actualizar_reloj_1(timer,reloj_no,reloj_si))
+    timer = tkinter.Checkbutton(ventana_config, text="Timer",command=lambda: actualizar_reloj_3(timer,reloj_no,reloj_si))
     timer.place(x=50,y=230)
 
     panel_de = tkinter.Checkbutton(ventana_config, text="Derecha",command=lambda: actualizar_panel_1(panel_de,panel_iz))
@@ -6318,7 +6483,7 @@ def actualizar_reloj_2(x,y,z):
 
     control_reloj = "No"
 
-def actualizar_reloj_1(x,y,z):
+def actualizar_reloj_3(x,y,z):
 
     global control_reloj
     
@@ -6353,15 +6518,20 @@ def ganador():
     global hora_numero
     global minuto_numero
     global segundo_numero
-
     global ventana
-
     global ventana_jugar
-
     global numero_manejado
+    global control_reloj
+    global dificultad
+    global top_10_facil
+    global top_10_medio
+    global top_10_dificil
+    global texto
+    global hora_si_terminado
+    global minuto_si_terminado
+    global segundo_si_terminado
+    global parada_final
 
-    
-    
     texto1 = casilla1_1["text"]    
     texto2 = casilla2_1["text"]
     texto3 = casilla3_1["text"]
@@ -6393,12 +6563,83 @@ def ganador():
     and texto8 != "" and texto9 != "" and texto10 != "" and texto11 != "" and texto12 != "" and texto13 != "" and texto14 != "" \
     and texto15 != "" and texto16 != "" and texto17 != "" and texto18 != "" and texto19 != "" and texto20 != "" and texto21 != "" \
     and texto22 != "" and texto23 != "" and texto24 != "" and texto25 != "":
-        segundo = segundo_numero["text"]   
-        minuto = minuto_numero["text"]
-        hora = hora_numero["text"]
-        numero_manejado = 0
-        mensaje = messagebox.showinfo(message="¡EXCELENTE! JUEGO TERMINADO CON ÉXITO, HA TARDADO: "+str(hora)+" "+"HORAS CON"+" "+str(minuto)+" "+"MINUTOS Y"+" "+str(segundo)+" "+"SEGUNDOS")
+
+        parada_final = True
         
+        if segundo_numero != 0 and minuto_numero != 0 and hora_numero != 0:
+            if control_reloj == "Si":
+                segundo = segundo_numero["text"]   
+                minuto = minuto_numero["text"]
+                hora = hora_numero["text"]
+                numero_manejado = 0
+                tiempo_durado = str(hora)+" "+"HORAS CON"+" "+str(minuto)+" "+"MINUTOS Y"+" "+str(segundo)+" "+"SEGUNDOS"
+                mensaje = messagebox.showinfo(message="¡EXCELENTE! JUEGO TERMINADO CON ÉXITO, HA TARDADO: "+tiempo_durado)
+            if control_reloj == "Timer":
+                segundo = int(segundo_numero["text"])
+                minuto = int(minuto_numero["text"])*60
+                hora = int(hora_numero["text"])*3600
+                numero_manejado = 0
+                hora_si_terminado = int(hora_si_terminado)*3600
+                minuto_si_terminado = int(minuto_si_terminado)*60
+                segundo_si_terminado = int(segundo_si_terminado)
+                hora_si_terminado = hora_si_terminado-hora
+                minuto_si_terminado = minuto_si_terminado-minuto
+                segundo_si_terminado = segundo_si_terminado-segundo
+                sumatoria = hora_si_terminado+minuto_si_terminado+segundo_si_terminado
+                hora = 0
+                minuto = 0
+                segundo = 0
+                while True:
+                    if sumatoria - 3600 >= 0:
+                        hora += 1
+                        sumatoria -= 3600
+                    else:
+                        break
+                while True:
+                    if sumatoria - 60 >= 0:
+                        minuto += 1
+                        sumatoria -= 60
+                    else:
+                        break
+                segundo = sumatoria 
+                tiempo_durado = str(hora)+" "+"HORAS CON"+" "+str(minuto)+" "+"MINUTOS Y"+" "+str(segundo)+" "+"SEGUNDOS"
+                mensaje = messagebox.showinfo(message="¡EXCELENTE! JUEGO TERMINADO CON ÉXITO, HA TARDADO: "+tiempo_durado)
+
+            tiempo_mostrado = texto,hora,":",minuto,":",segundo
+            
+            if dificultad == "FACIL":
+                if len(top_10_facil) < 10:
+                    top_10_facil.append(tiempo_mostrado)
+                    top_10_facil = sorted(top_10_facil, key=lambda x: x[1:])
+                else:
+                    lista_prueba = [top_10_facil[9],tiempo_mostrado]
+                    lista_prueba = sorted(lista_prueba, key=lambda x: x[1:])
+                    top_10_facil[9] = lista_prueba[0]
+                    top_10_facil = sorted(top_10_facil, key=lambda x: x[1:])
+     
+            if dificultad == "MEDIO":
+                if len(top_10_medio) < 10:
+                    top_10_medio.append(tiempo_mostrado)
+                    top_10_medio = sorted(top_10_medio, key=lambda x: x[1:])
+                else:
+                    lista_prueba = [top_10_medio[9],tiempo_mostrado]
+                    lista_prueba = sorted(lista_prueba, key=lambda x: x[1:])
+                    top_10_medio[9] = lista_prueba[0]
+                    top_10_medio = sorted(top_10_medio, key=lambda x: x[1:])
+                    
+            if dificultad == "DIFICIL":
+                if len(top_10_dificil) < 10:
+                    top_10_dificil.append(tiempo_mostrado)
+                    top_10_dificil = sorted(top_10_dificil, key=lambda x: x[1:])
+                else:
+                    lista_prueba = [top_10_dificil[9],tiempo_mostrado]
+                    lista_prueba = sorted(lista_prueba, key=lambda x: x[1:])
+                    top_10_dificil[9] = lista_prueba[0]
+                    top_10_dificil = sorted(top_10_dificil, key=lambda x: x[1:])
+                    
+        if control_reloj == "No":
+            mensaje = messagebox.showinfo(message="¡EXCELENTE! JUEGO TERMINADO CON ÉXITO")
+    
         if mensaje == "ok":
             return regreso(ventana_jugar,ventana)
     
