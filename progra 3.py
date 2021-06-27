@@ -69,7 +69,47 @@ segundo_si_terminado = 0
 texto = 0
 
 parada_final = 0
-           
+
+guardar_casilla1_1 = 0
+guardar_casilla2_1 = 0
+guardar_casilla3_1 = 0
+guardar_casilla4_1 = 0
+guardar_casilla5_1 = 0
+guardar_casilla1_2 = 0
+guardar_casilla2_2 = 0
+guardar_casilla3_2 = 0
+guardar_casilla4_2 = 0
+guardar_casilla5_2 = 0
+guardar_casilla1_3 = 0
+guardar_casilla2_3 = 0
+guardar_casilla3_3 = 0
+guardar_casilla4_3 = 0
+guardar_casilla5_3 = 0
+guardar_casilla1_4 = 0
+guardar_casilla2_4 = 0
+guardar_casilla3_4 = 0
+guardar_casilla4_4 = 0
+guardar_casilla5_4 = 0
+guardar_casilla1_5 = 0
+guardar_casilla2_5 = 0
+guardar_casilla3_5 = 0
+guardar_casilla4_5 = 0
+guardar_casilla5_5 = 0
+
+guardar_dificultad = 0
+guardar_control_reloj = 0
+guardar_panel = 0
+guardar_suerte = 0
+
+guardar_hora = 0
+guardar_minuto = 0
+guardar_segundo = 0
+
+juego_cargado = False
+
+botton_guardar = 0
+botton_cargar = 0
+
 #================================================JUEGO 1================================================#
 
 #=================================================FACIL=================================================#
@@ -105,7 +145,7 @@ def juego_facil_1(ventana_jugar):
     global casilla3_5
     global casilla4_5
     global casilla5_5
-    
+
     casilla1_1 = tkinter.Button(ventana_jugar,height=2, width=5, command=cambio1_1)
     casilla1_1.place(x=127,y=150)
     casilla2_1 = tkinter.Button(ventana_jugar,height=2, width=5, command=cambio2_1)
@@ -164,6 +204,62 @@ def juego_facil_1(ventana_jugar):
     label1 = tkinter.Label(ventana_jugar, text=">",bg="#FFECEC").place(x=178, y=160)
     label2 = tkinter.Label(ventana_jugar, text=">",bg="#FFECEC").place(x=388, y=160)
     label3 = tkinter.Label(ventana_jugar, text="<",bg="#FFECEC").place(x=388, y=420)
+
+    global juego_cargado
+
+    global guardar_casilla1_1
+    global guardar_casilla2_1
+    global guardar_casilla3_1
+    global guardar_casilla4_1
+    global guardar_casilla5_1
+    global guardar_casilla1_2
+    global guardar_casilla2_2
+    global guardar_casilla3_2
+    global guardar_casilla4_2
+    global guardar_casilla5_2
+    global guardar_casilla1_3
+    global guardar_casilla2_3
+    global guardar_casilla3_3
+    global guardar_casilla4_3
+    global guardar_casilla5_3
+    global guardar_casilla1_4
+    global guardar_casilla2_4
+    global guardar_casilla3_4
+    global guardar_casilla4_4
+    global guardar_casilla5_4
+    global guardar_casilla1_5
+    global guardar_casilla2_5
+    global guardar_casilla3_5
+    global guardar_casilla4_5
+    global guardar_casilla5_5
+    
+    if juego_cargado == True:
+
+        casilla1_1.config(text=guardar_casilla1_1)
+        casilla2_1.config(text=guardar_casilla2_1)
+        casilla3_1.config(text=guardar_casilla3_1)
+        casilla4_1.config(text=guardar_casilla4_1)
+        casilla5_1.config(text=guardar_casilla5_1)
+        casilla1_2.config(text=guardar_casilla1_2)
+        casilla2_2.config(text=guardar_casilla2_2)
+        casilla3_2.config(text=guardar_casilla3_2)
+        casilla4_2.config(text=guardar_casilla4_2)
+        casilla5_2.config(text=guardar_casilla5_2)
+        casilla1_3.config(text=guardar_casilla1_3)
+        casilla2_3.config(text=guardar_casilla2_3)
+        casilla3_3.config(text=guardar_casilla3_3)
+        casilla4_3.config(text=guardar_casilla4_3)
+        casilla5_3.config(text=guardar_casilla5_3)
+        casilla1_4.config(text=guardar_casilla1_4)
+        casilla2_4.config(text=guardar_casilla2_4)
+        casilla3_4.config(text=guardar_casilla3_4)
+        casilla4_4.config(text=guardar_casilla4_4)
+        casilla5_4.config(text=guardar_casilla5_4)
+        casilla1_5.config(text=guardar_casilla1_5)
+        casilla2_5.config(text=guardar_casilla2_5)
+        casilla3_5.config(text=guardar_casilla3_5)
+        casilla4_5.config(text=guardar_casilla4_5)
+        casilla5_5.config(text=guardar_casilla5_5)
 
 def cambio1_1():    
     global numero_manejado
@@ -779,6 +875,62 @@ def juego_facil_2(ventana_jugar):
     label3 = tkinter.Label(ventana_jugar, text=">",bg="#FFECEC").place(x=388, y=420)
     label4 = tkinter.Label(ventana_jugar, text=">",bg="#FFECEC").place(x=178, y=420)
 
+    global juego_cargado
+
+    global guardar_casilla1_1
+    global guardar_casilla2_1
+    global guardar_casilla3_1
+    global guardar_casilla4_1
+    global guardar_casilla5_1
+    global guardar_casilla1_2
+    global guardar_casilla2_2
+    global guardar_casilla3_2
+    global guardar_casilla4_2
+    global guardar_casilla5_2
+    global guardar_casilla1_3
+    global guardar_casilla2_3
+    global guardar_casilla3_3
+    global guardar_casilla4_3
+    global guardar_casilla5_3
+    global guardar_casilla1_4
+    global guardar_casilla2_4
+    global guardar_casilla3_4
+    global guardar_casilla4_4
+    global guardar_casilla5_4
+    global guardar_casilla1_5
+    global guardar_casilla2_5
+    global guardar_casilla3_5
+    global guardar_casilla4_5
+    global guardar_casilla5_5
+    
+    if juego_cargado == True:
+
+        casilla1_1.config(text=guardar_casilla1_1)
+        casilla2_1.config(text=guardar_casilla2_1)
+        casilla3_1.config(text=guardar_casilla3_1)
+        casilla4_1.config(text=guardar_casilla4_1)
+        casilla5_1.config(text=guardar_casilla5_1)
+        casilla1_2.config(text=guardar_casilla1_2)
+        casilla2_2.config(text=guardar_casilla2_2)
+        casilla3_2.config(text=guardar_casilla3_2)
+        casilla4_2.config(text=guardar_casilla4_2)
+        casilla5_2.config(text=guardar_casilla5_2)
+        casilla1_3.config(text=guardar_casilla1_3)
+        casilla2_3.config(text=guardar_casilla2_3)
+        casilla3_3.config(text=guardar_casilla3_3)
+        casilla4_3.config(text=guardar_casilla4_3)
+        casilla5_3.config(text=guardar_casilla5_3)
+        casilla1_4.config(text=guardar_casilla1_4)
+        casilla2_4.config(text=guardar_casilla2_4)
+        casilla3_4.config(text=guardar_casilla3_4)
+        casilla4_4.config(text=guardar_casilla4_4)
+        casilla5_4.config(text=guardar_casilla5_4)
+        casilla1_5.config(text=guardar_casilla1_5)
+        casilla2_5.config(text=guardar_casilla2_5)
+        casilla3_5.config(text=guardar_casilla3_5)
+        casilla4_5.config(text=guardar_casilla4_5)
+        casilla5_5.config(text=guardar_casilla5_5)
+    
 def cambio1_1_2():    
     global numero_manejado
     if numero_manejado == 0:
@@ -1399,6 +1551,62 @@ def juego_facil_3(ventana_jugar):
     label3 = tkinter.Label(ventana_jugar, text=">",bg="#FFECEC").place(x=318, y=290)
     label4 = tkinter.Label(ventana_jugar, text=">",bg="#FFECEC").place(x=388, y=290)
 
+    global juego_cargado
+
+    global guardar_casilla1_1
+    global guardar_casilla2_1
+    global guardar_casilla3_1
+    global guardar_casilla4_1
+    global guardar_casilla5_1
+    global guardar_casilla1_2
+    global guardar_casilla2_2
+    global guardar_casilla3_2
+    global guardar_casilla4_2
+    global guardar_casilla5_2
+    global guardar_casilla1_3
+    global guardar_casilla2_3
+    global guardar_casilla3_3
+    global guardar_casilla4_3
+    global guardar_casilla5_3
+    global guardar_casilla1_4
+    global guardar_casilla2_4
+    global guardar_casilla3_4
+    global guardar_casilla4_4
+    global guardar_casilla5_4
+    global guardar_casilla1_5
+    global guardar_casilla2_5
+    global guardar_casilla3_5
+    global guardar_casilla4_5
+    global guardar_casilla5_5
+    
+    if juego_cargado == True:
+
+        casilla1_1.config(text=guardar_casilla1_1)
+        casilla2_1.config(text=guardar_casilla2_1)
+        casilla3_1.config(text=guardar_casilla3_1)
+        casilla4_1.config(text=guardar_casilla4_1)
+        casilla5_1.config(text=guardar_casilla5_1)
+        casilla1_2.config(text=guardar_casilla1_2)
+        casilla2_2.config(text=guardar_casilla2_2)
+        casilla3_2.config(text=guardar_casilla3_2)
+        casilla4_2.config(text=guardar_casilla4_2)
+        casilla5_2.config(text=guardar_casilla5_2)
+        casilla1_3.config(text=guardar_casilla1_3)
+        casilla2_3.config(text=guardar_casilla2_3)
+        casilla3_3.config(text=guardar_casilla3_3)
+        casilla4_3.config(text=guardar_casilla4_3)
+        casilla5_3.config(text=guardar_casilla5_3)
+        casilla1_4.config(text=guardar_casilla1_4)
+        casilla2_4.config(text=guardar_casilla2_4)
+        casilla3_4.config(text=guardar_casilla3_4)
+        casilla4_4.config(text=guardar_casilla4_4)
+        casilla5_4.config(text=guardar_casilla5_4)
+        casilla1_5.config(text=guardar_casilla1_5)
+        casilla2_5.config(text=guardar_casilla2_5)
+        casilla3_5.config(text=guardar_casilla3_5)
+        casilla4_5.config(text=guardar_casilla4_5)
+        casilla5_5.config(text=guardar_casilla5_5)
+    
 def cambio1_1_3():    
     global numero_manejado
     if numero_manejado == 0:
@@ -2022,6 +2230,62 @@ def juego_intermedio_1(ventana_jugar):
     label6 = tkinter.Label(ventana_jugar, text="ʌ",bg="#FFECEC").place(x=353, y=324)
     label1 = tkinter.Label(ventana_jugar, text=">",bg="#FFECEC").place(x=178, y=420)
 
+    global juego_cargado
+
+    global guardar_casilla1_1
+    global guardar_casilla2_1
+    global guardar_casilla3_1
+    global guardar_casilla4_1
+    global guardar_casilla5_1
+    global guardar_casilla1_2
+    global guardar_casilla2_2
+    global guardar_casilla3_2
+    global guardar_casilla4_2
+    global guardar_casilla5_2
+    global guardar_casilla1_3
+    global guardar_casilla2_3
+    global guardar_casilla3_3
+    global guardar_casilla4_3
+    global guardar_casilla5_3
+    global guardar_casilla1_4
+    global guardar_casilla2_4
+    global guardar_casilla3_4
+    global guardar_casilla4_4
+    global guardar_casilla5_4
+    global guardar_casilla1_5
+    global guardar_casilla2_5
+    global guardar_casilla3_5
+    global guardar_casilla4_5
+    global guardar_casilla5_5
+    
+    if juego_cargado == True:
+
+        casilla1_1.config(text=guardar_casilla1_1)
+        casilla2_1.config(text=guardar_casilla2_1)
+        casilla3_1.config(text=guardar_casilla3_1)
+        casilla4_1.config(text=guardar_casilla4_1)
+        casilla5_1.config(text=guardar_casilla5_1)
+        casilla1_2.config(text=guardar_casilla1_2)
+        casilla2_2.config(text=guardar_casilla2_2)
+        casilla3_2.config(text=guardar_casilla3_2)
+        casilla4_2.config(text=guardar_casilla4_2)
+        casilla5_2.config(text=guardar_casilla5_2)
+        casilla1_3.config(text=guardar_casilla1_3)
+        casilla2_3.config(text=guardar_casilla2_3)
+        casilla3_3.config(text=guardar_casilla3_3)
+        casilla4_3.config(text=guardar_casilla4_3)
+        casilla5_3.config(text=guardar_casilla5_3)
+        casilla1_4.config(text=guardar_casilla1_4)
+        casilla2_4.config(text=guardar_casilla2_4)
+        casilla3_4.config(text=guardar_casilla3_4)
+        casilla4_4.config(text=guardar_casilla4_4)
+        casilla5_4.config(text=guardar_casilla5_4)
+        casilla1_5.config(text=guardar_casilla1_5)
+        casilla2_5.config(text=guardar_casilla2_5)
+        casilla3_5.config(text=guardar_casilla3_5)
+        casilla4_5.config(text=guardar_casilla4_5)
+        casilla5_5.config(text=guardar_casilla5_5)
+    
 def cambio1_1_1_intermedio():    
     global numero_manejado
     if numero_manejado == 0:
@@ -2663,6 +2927,62 @@ def juego_intermedio_2(ventana_jugar):
     label6 = tkinter.Label(ventana_jugar, text=">",bg="#FFECEC").place(x=178, y=420)
     label7 = tkinter.Label(ventana_jugar, text="<",bg="#FFECEC").place(x=247, y=420)
 
+    global juego_cargado
+
+    global guardar_casilla1_1
+    global guardar_casilla2_1
+    global guardar_casilla3_1
+    global guardar_casilla4_1
+    global guardar_casilla5_1
+    global guardar_casilla1_2
+    global guardar_casilla2_2
+    global guardar_casilla3_2
+    global guardar_casilla4_2
+    global guardar_casilla5_2
+    global guardar_casilla1_3
+    global guardar_casilla2_3
+    global guardar_casilla3_3
+    global guardar_casilla4_3
+    global guardar_casilla5_3
+    global guardar_casilla1_4
+    global guardar_casilla2_4
+    global guardar_casilla3_4
+    global guardar_casilla4_4
+    global guardar_casilla5_4
+    global guardar_casilla1_5
+    global guardar_casilla2_5
+    global guardar_casilla3_5
+    global guardar_casilla4_5
+    global guardar_casilla5_5
+    
+    if juego_cargado == True:
+
+        casilla1_1.config(text=guardar_casilla1_1)
+        casilla2_1.config(text=guardar_casilla2_1)
+        casilla3_1.config(text=guardar_casilla3_1)
+        casilla4_1.config(text=guardar_casilla4_1)
+        casilla5_1.config(text=guardar_casilla5_1)
+        casilla1_2.config(text=guardar_casilla1_2)
+        casilla2_2.config(text=guardar_casilla2_2)
+        casilla3_2.config(text=guardar_casilla3_2)
+        casilla4_2.config(text=guardar_casilla4_2)
+        casilla5_2.config(text=guardar_casilla5_2)
+        casilla1_3.config(text=guardar_casilla1_3)
+        casilla2_3.config(text=guardar_casilla2_3)
+        casilla3_3.config(text=guardar_casilla3_3)
+        casilla4_3.config(text=guardar_casilla4_3)
+        casilla5_3.config(text=guardar_casilla5_3)
+        casilla1_4.config(text=guardar_casilla1_4)
+        casilla2_4.config(text=guardar_casilla2_4)
+        casilla3_4.config(text=guardar_casilla3_4)
+        casilla4_4.config(text=guardar_casilla4_4)
+        casilla5_4.config(text=guardar_casilla5_4)
+        casilla1_5.config(text=guardar_casilla1_5)
+        casilla2_5.config(text=guardar_casilla2_5)
+        casilla3_5.config(text=guardar_casilla3_5)
+        casilla4_5.config(text=guardar_casilla4_5)
+        casilla5_5.config(text=guardar_casilla5_5)
+    
 def cambio1_1_2_intermedio():    
     global numero_manejado
     if numero_manejado == 0:
@@ -3304,6 +3624,62 @@ def juego_intermedio_3(ventana_jugar):
     label6 = tkinter.Label(ventana_jugar, text=">",bg="#FFECEC").place(x=178, y=420)
     label7 = tkinter.Label(ventana_jugar, text="<",bg="#FFECEC").place(x=247, y=420)
 
+    global juego_cargado
+
+    global guardar_casilla1_1
+    global guardar_casilla2_1
+    global guardar_casilla3_1
+    global guardar_casilla4_1
+    global guardar_casilla5_1
+    global guardar_casilla1_2
+    global guardar_casilla2_2
+    global guardar_casilla3_2
+    global guardar_casilla4_2
+    global guardar_casilla5_2
+    global guardar_casilla1_3
+    global guardar_casilla2_3
+    global guardar_casilla3_3
+    global guardar_casilla4_3
+    global guardar_casilla5_3
+    global guardar_casilla1_4
+    global guardar_casilla2_4
+    global guardar_casilla3_4
+    global guardar_casilla4_4
+    global guardar_casilla5_4
+    global guardar_casilla1_5
+    global guardar_casilla2_5
+    global guardar_casilla3_5
+    global guardar_casilla4_5
+    global guardar_casilla5_5
+    
+    if juego_cargado == True:
+
+        casilla1_1.config(text=guardar_casilla1_1)
+        casilla2_1.config(text=guardar_casilla2_1)
+        casilla3_1.config(text=guardar_casilla3_1)
+        casilla4_1.config(text=guardar_casilla4_1)
+        casilla5_1.config(text=guardar_casilla5_1)
+        casilla1_2.config(text=guardar_casilla1_2)
+        casilla2_2.config(text=guardar_casilla2_2)
+        casilla3_2.config(text=guardar_casilla3_2)
+        casilla4_2.config(text=guardar_casilla4_2)
+        casilla5_2.config(text=guardar_casilla5_2)
+        casilla1_3.config(text=guardar_casilla1_3)
+        casilla2_3.config(text=guardar_casilla2_3)
+        casilla3_3.config(text=guardar_casilla3_3)
+        casilla4_3.config(text=guardar_casilla4_3)
+        casilla5_3.config(text=guardar_casilla5_3)
+        casilla1_4.config(text=guardar_casilla1_4)
+        casilla2_4.config(text=guardar_casilla2_4)
+        casilla3_4.config(text=guardar_casilla3_4)
+        casilla4_4.config(text=guardar_casilla4_4)
+        casilla5_4.config(text=guardar_casilla5_4)
+        casilla1_5.config(text=guardar_casilla1_5)
+        casilla2_5.config(text=guardar_casilla2_5)
+        casilla3_5.config(text=guardar_casilla3_5)
+        casilla4_5.config(text=guardar_casilla4_5)
+        casilla5_5.config(text=guardar_casilla5_5)
+    
 def cambio1_1_3_intermedio():    
     global numero_manejado
     if numero_manejado == 0:
@@ -3950,6 +4326,62 @@ def juego_dificil_1(ventana_jugar):
     label10 = tkinter.Label(ventana_jugar, text="ʌ",bg="#FFECEC").place(x=423, y=324)
     label1 = tkinter.Label(ventana_jugar, text="v",bg="#FFECEC").place(x=143, y=192)
 
+    global juego_cargado
+
+    global guardar_casilla1_1
+    global guardar_casilla2_1
+    global guardar_casilla3_1
+    global guardar_casilla4_1
+    global guardar_casilla5_1
+    global guardar_casilla1_2
+    global guardar_casilla2_2
+    global guardar_casilla3_2
+    global guardar_casilla4_2
+    global guardar_casilla5_2
+    global guardar_casilla1_3
+    global guardar_casilla2_3
+    global guardar_casilla3_3
+    global guardar_casilla4_3
+    global guardar_casilla5_3
+    global guardar_casilla1_4
+    global guardar_casilla2_4
+    global guardar_casilla3_4
+    global guardar_casilla4_4
+    global guardar_casilla5_4
+    global guardar_casilla1_5
+    global guardar_casilla2_5
+    global guardar_casilla3_5
+    global guardar_casilla4_5
+    global guardar_casilla5_5
+    
+    if juego_cargado == True:
+
+        casilla1_1.config(text=guardar_casilla1_1)
+        casilla2_1.config(text=guardar_casilla2_1)
+        casilla3_1.config(text=guardar_casilla3_1)
+        casilla4_1.config(text=guardar_casilla4_1)
+        casilla5_1.config(text=guardar_casilla5_1)
+        casilla1_2.config(text=guardar_casilla1_2)
+        casilla2_2.config(text=guardar_casilla2_2)
+        casilla3_2.config(text=guardar_casilla3_2)
+        casilla4_2.config(text=guardar_casilla4_2)
+        casilla5_2.config(text=guardar_casilla5_2)
+        casilla1_3.config(text=guardar_casilla1_3)
+        casilla2_3.config(text=guardar_casilla2_3)
+        casilla3_3.config(text=guardar_casilla3_3)
+        casilla4_3.config(text=guardar_casilla4_3)
+        casilla5_3.config(text=guardar_casilla5_3)
+        casilla1_4.config(text=guardar_casilla1_4)
+        casilla2_4.config(text=guardar_casilla2_4)
+        casilla3_4.config(text=guardar_casilla3_4)
+        casilla4_4.config(text=guardar_casilla4_4)
+        casilla5_4.config(text=guardar_casilla5_4)
+        casilla1_5.config(text=guardar_casilla1_5)
+        casilla2_5.config(text=guardar_casilla2_5)
+        casilla3_5.config(text=guardar_casilla3_5)
+        casilla4_5.config(text=guardar_casilla4_5)
+        casilla5_5.config(text=guardar_casilla5_5)
+    
 def cambio1_1_1_dificil():    
     global numero_manejado
     if numero_manejado == 0:
@@ -4620,6 +5052,62 @@ def juego_dificil_2(ventana_jugar):
     label10 = tkinter.Label(ventana_jugar, text="ʌ",bg="#FFECEC").place(x=423, y=324)
     label1 = tkinter.Label(ventana_jugar, text="v",bg="#FFECEC").place(x=143, y=192)
 
+    global juego_cargado
+
+    global guardar_casilla1_1
+    global guardar_casilla2_1
+    global guardar_casilla3_1
+    global guardar_casilla4_1
+    global guardar_casilla5_1
+    global guardar_casilla1_2
+    global guardar_casilla2_2
+    global guardar_casilla3_2
+    global guardar_casilla4_2
+    global guardar_casilla5_2
+    global guardar_casilla1_3
+    global guardar_casilla2_3
+    global guardar_casilla3_3
+    global guardar_casilla4_3
+    global guardar_casilla5_3
+    global guardar_casilla1_4
+    global guardar_casilla2_4
+    global guardar_casilla3_4
+    global guardar_casilla4_4
+    global guardar_casilla5_4
+    global guardar_casilla1_5
+    global guardar_casilla2_5
+    global guardar_casilla3_5
+    global guardar_casilla4_5
+    global guardar_casilla5_5
+    
+    if juego_cargado == True:
+
+        casilla1_1.config(text=guardar_casilla1_1)
+        casilla2_1.config(text=guardar_casilla2_1)
+        casilla3_1.config(text=guardar_casilla3_1)
+        casilla4_1.config(text=guardar_casilla4_1)
+        casilla5_1.config(text=guardar_casilla5_1)
+        casilla1_2.config(text=guardar_casilla1_2)
+        casilla2_2.config(text=guardar_casilla2_2)
+        casilla3_2.config(text=guardar_casilla3_2)
+        casilla4_2.config(text=guardar_casilla4_2)
+        casilla5_2.config(text=guardar_casilla5_2)
+        casilla1_3.config(text=guardar_casilla1_3)
+        casilla2_3.config(text=guardar_casilla2_3)
+        casilla3_3.config(text=guardar_casilla3_3)
+        casilla4_3.config(text=guardar_casilla4_3)
+        casilla5_3.config(text=guardar_casilla5_3)
+        casilla1_4.config(text=guardar_casilla1_4)
+        casilla2_4.config(text=guardar_casilla2_4)
+        casilla3_4.config(text=guardar_casilla3_4)
+        casilla4_4.config(text=guardar_casilla4_4)
+        casilla5_4.config(text=guardar_casilla5_4)
+        casilla1_5.config(text=guardar_casilla1_5)
+        casilla2_5.config(text=guardar_casilla2_5)
+        casilla3_5.config(text=guardar_casilla3_5)
+        casilla4_5.config(text=guardar_casilla4_5)
+        casilla5_5.config(text=guardar_casilla5_5)
+    
 def cambio1_1_2_dificil():    
     global numero_manejado
     if numero_manejado == 0:
@@ -5290,6 +5778,62 @@ def juego_dificil_3(ventana_jugar):
     label10 = tkinter.Label(ventana_jugar, text="ʌ",bg="#FFECEC").place(x=423, y=324)
     label1 = tkinter.Label(ventana_jugar, text="v",bg="#FFECEC").place(x=143, y=192)
 
+    global juego_cargado
+
+    global guardar_casilla1_1
+    global guardar_casilla2_1
+    global guardar_casilla3_1
+    global guardar_casilla4_1
+    global guardar_casilla5_1
+    global guardar_casilla1_2
+    global guardar_casilla2_2
+    global guardar_casilla3_2
+    global guardar_casilla4_2
+    global guardar_casilla5_2
+    global guardar_casilla1_3
+    global guardar_casilla2_3
+    global guardar_casilla3_3
+    global guardar_casilla4_3
+    global guardar_casilla5_3
+    global guardar_casilla1_4
+    global guardar_casilla2_4
+    global guardar_casilla3_4
+    global guardar_casilla4_4
+    global guardar_casilla5_4
+    global guardar_casilla1_5
+    global guardar_casilla2_5
+    global guardar_casilla3_5
+    global guardar_casilla4_5
+    global guardar_casilla5_5
+    
+    if juego_cargado == True:
+
+        casilla1_1.config(text=guardar_casilla1_1)
+        casilla2_1.config(text=guardar_casilla2_1)
+        casilla3_1.config(text=guardar_casilla3_1)
+        casilla4_1.config(text=guardar_casilla4_1)
+        casilla5_1.config(text=guardar_casilla5_1)
+        casilla1_2.config(text=guardar_casilla1_2)
+        casilla2_2.config(text=guardar_casilla2_2)
+        casilla3_2.config(text=guardar_casilla3_2)
+        casilla4_2.config(text=guardar_casilla4_2)
+        casilla5_2.config(text=guardar_casilla5_2)
+        casilla1_3.config(text=guardar_casilla1_3)
+        casilla2_3.config(text=guardar_casilla2_3)
+        casilla3_3.config(text=guardar_casilla3_3)
+        casilla4_3.config(text=guardar_casilla4_3)
+        casilla5_3.config(text=guardar_casilla5_3)
+        casilla1_4.config(text=guardar_casilla1_4)
+        casilla2_4.config(text=guardar_casilla2_4)
+        casilla3_4.config(text=guardar_casilla3_4)
+        casilla4_4.config(text=guardar_casilla4_4)
+        casilla5_4.config(text=guardar_casilla5_4)
+        casilla1_5.config(text=guardar_casilla1_5)
+        casilla2_5.config(text=guardar_casilla2_5)
+        casilla3_5.config(text=guardar_casilla3_5)
+        casilla4_5.config(text=guardar_casilla4_5)
+        casilla5_5.config(text=guardar_casilla5_5)
+    
 def cambio1_1_3_dificil():    
     global numero_manejado
     if numero_manejado == 0:
@@ -5999,6 +6543,8 @@ def inicio():
     global top_10_medio
     global top_10_dificil
     global texto
+    global botton_guardar
+    global botton_cargar
     
     if control_reloj == "Timer":
         if botton_timer["state"] != "disabled":
@@ -6024,6 +6570,9 @@ def inicio():
             return messagebox.showinfo(message="EL NOMBRE YA SE ENCUENTRA EN EL TOP")
     
     iniciar_activado = True
+
+    botton_cargar["state"] = "disabled"
+    botton_guardar["state"] = "normal"
     
     botton_pri_2["state"] = "normal"
     botton_pri_3["state"] = "normal"
@@ -6044,7 +6593,8 @@ def tiempo():
     global hora_si_terminado
     global minuto_si_terminado
     global segundo_si_terminado
-    global parada_final 
+    global parada_final
+    global juego_cargado
 
     if iniciar_activado == True:
         if control_reloj == "No":
@@ -6071,6 +6621,7 @@ def tiempo():
             if segundo == 0 and minuto == 0 and hora == 0:
                 mensaje = messagebox.askquestion(message="SE HA ACABADO EL TIEMPO, ¿DESEA CONTINUAR?")
                 if mensaje == "no":
+                    ventana_jugar.destroy()
                     return jugar()
                 if mensaje == "yes":
                     control_reloj = "Si"
@@ -6091,10 +6642,11 @@ def tiempo():
                 actualizar = tkinter.Label()
                 actualizar.after(1000,tiempo)
 
-    else:
+    elif juego_cargado == False:
         minuto_numero.config(text=0)
         segundo_numero.config(text=0)
-        hora_numero.config(text=0)  
+        hora_numero.config(text=0)
+    juego_cargado = False
 
 def borrar_el_juego(ventana_jugar):
 
@@ -6254,6 +6806,147 @@ def top_10_todos():
         y_todos+=20
 
 #=======================================================================================================#
+def guardar_game():
+
+    global casilla1_1
+    global casilla2_1
+    global casilla3_1
+    global casilla4_1
+    global casilla5_1
+    global casilla1_2
+    global casilla2_2
+    global casilla3_2
+    global casilla4_2
+    global casilla5_2
+    global casilla1_3
+    global casilla2_3
+    global casilla3_3
+    global casilla4_3
+    global casilla5_3
+    global casilla1_4
+    global casilla2_4
+    global casilla3_4
+    global casilla4_4
+    global casilla5_4
+    global casilla1_5
+    global casilla2_5
+    global casilla3_5
+    global casilla4_5
+    global casilla5_5
+
+    global guardar_casilla1_1
+    global guardar_casilla2_1
+    global guardar_casilla3_1
+    global guardar_casilla4_1
+    global guardar_casilla5_1
+    global guardar_casilla1_2
+    global guardar_casilla2_2
+    global guardar_casilla3_2
+    global guardar_casilla4_2
+    global guardar_casilla5_2
+    global guardar_casilla1_3
+    global guardar_casilla2_3
+    global guardar_casilla3_3
+    global guardar_casilla4_3
+    global guardar_casilla5_3
+    global guardar_casilla1_4
+    global guardar_casilla2_4
+    global guardar_casilla3_4
+    global guardar_casilla4_4
+    global guardar_casilla5_4
+    global guardar_casilla1_5
+    global guardar_casilla2_5
+    global guardar_casilla3_5
+    global guardar_casilla4_5
+    global guardar_casilla5_5
+
+    global guardar_dificultad
+    global guardar_control_reloj
+    global guardar_panel
+    global guardar_suerte
+    
+    global dificultad
+    global control_reloj
+    global panel
+    global suerte
+
+    global hora_numero
+    global minuto_numero
+    global segundo_numero
+
+    global guardar_hora
+    global guardar_minuto
+    global guardar_segundo 
+
+    guardar_casilla1_1 = casilla1_1["text"]
+    guardar_casilla1_2 = casilla1_2["text"]
+    guardar_casilla1_3 = casilla1_3["text"]
+    guardar_casilla1_4 = casilla1_4["text"]
+    guardar_casilla1_5 = casilla1_5["text"]
+    guardar_casilla2_1 = casilla2_1["text"]
+    guardar_casilla2_2 = casilla2_2["text"]
+    guardar_casilla2_3 = casilla2_3["text"]
+    guardar_casilla2_4 = casilla2_4["text"]
+    guardar_casilla2_5 = casilla2_5["text"]
+    guardar_casilla3_1 = casilla3_1["text"]
+    guardar_casilla3_2 = casilla3_2["text"]
+    guardar_casilla3_3 = casilla3_3["text"]
+    guardar_casilla3_4 = casilla3_4["text"]
+    guardar_casilla3_5 = casilla3_5["text"]
+    guardar_casilla4_1 = casilla4_1["text"]
+    guardar_casilla4_2 = casilla4_2["text"]
+    guardar_casilla4_3 = casilla4_3["text"]
+    guardar_casilla4_4 = casilla4_4["text"]
+    guardar_casilla4_5 = casilla4_5["text"]
+    guardar_casilla5_1 = casilla5_1["text"]
+    guardar_casilla5_2 = casilla5_2["text"]
+    guardar_casilla5_3 = casilla5_3["text"]
+    guardar_casilla5_4 = casilla5_4["text"]
+    guardar_casilla5_5 = casilla5_5["text"]
+
+    guardar_dificultad = dificultad
+    guardar_control_reloj = control_reloj
+    guardar_panel = panel
+    guardar_suerte = suerte
+
+    guardar_hora = hora_numero["text"]
+    guardar_minuto = minuto_numero["text"]
+    guardar_segundo = segundo_numero["text"]
+
+def cargar_game(x):
+    
+    global guardar_dificultad
+    global guardar_control_reloj
+    global guardar_panel
+    global guardar_suerte
+    
+    global dificultad
+    global control_reloj
+    global panel
+    global suerte
+
+    global hora_numero
+    global minuto_numero
+    global segundo_numero
+
+    global guardar_hora
+    global guardar_minuto
+    global guardar_segundo 
+
+    global juego_cargado
+
+    juego_cargado = True
+
+    dificultad = guardar_dificultad
+    control_reloj = guardar_control_reloj
+    panel = guardar_panel
+    suerte = guardar_suerte
+    hora_numero = guardar_hora
+    minuto_numero = guardar_minuto
+    segundo_numero = guardar_segundo
+
+    x.destroy()
+    jugar()
 
 def jugar():
     
@@ -6285,6 +6978,13 @@ def jugar():
     global entrada_segundo
     global botton_timer
     global parada_final
+    global guardar_suerte
+    global juego_cargado
+    global guardar_hora
+    global guardar_minuto
+    global guardar_segundo
+    global botton_guardar
+    global botton_cargar
     
     ventana.state(newstate="withdraw")
     ventana_jugar = tkinter.Tk()
@@ -6295,7 +6995,6 @@ def jugar():
     iniciar_activado = False
     parada_final = False
     desactivar = 0
-
     numero_manejado = 0
 
     borde1 = tkinter.Canvas(ventana_jugar, bg="#FFEA82", height=43, width=181).place(x=195,y=30)    
@@ -6344,6 +7043,7 @@ def jugar():
         minutos_reloj.place(x=92,y=550)
         segundos_reloj = tkinter.Label(ventana_jugar, text="Segundos",bg="#FFB9FE",width=8)
         segundos_reloj.place(x=152,y=550)
+
         hora_numero = tkinter.Label(ventana_jugar, text=0,bg="#FFEA82")
         hora_numero.place(x=58,y=590)
         minuto_numero = tkinter.Label(ventana_jugar, text=0,bg="#FFEA82")
@@ -6360,6 +7060,13 @@ def jugar():
         entrada_segundo.place(x=153,y=650)
         botton_timer = tkinter.Button(ventana_jugar,text="Timer",bg="#FFEA82",command=confirmar)
         botton_timer.place(x=220,y=647)
+
+    botton_guardar = tkinter.Button(ventana_jugar,text="Guardar Juego",bg="#AAAAAA",width=20,fg="white",command=guardar_game)
+    botton_guardar.place(x=325,y=560)
+    botton_guardar["state"] = "disabled"
+
+    botton_cargar = tkinter.Button(ventana_jugar,text="Cargar Juego",bg="#AAAAAA",width=20,fg="white",command=lambda: cargar_game(ventana_jugar))
+    botton_cargar.place(x=325,y=600)
 
     botton_pri_1 = tkinter.Button(ventana_jugar, text="INICIAR JUEGO", height=2, width=13, bg="#99FFA6", command=inicio)
     botton_pri_1.place(x=20, y=480)
@@ -6378,8 +7085,17 @@ def jugar():
     botton_regreso = tkinter.Button(ventana_jugar,text="X",command=lambda: regreso(ventana_jugar,ventana))
     botton_regreso.place(x=558,y=65)
 
-    if borrar == False:                  
+    if borrar == False:
         suerte = random.randint(1,3)
+
+    if juego_cargado == True:
+        suerte = guardar_suerte
+        hora_numero.config(text=int(guardar_hora))
+        minuto_numero.config(text=int(guardar_minuto))
+        segundo_numero.config(text=int(guardar_segundo))
+        if control_reloj == "Timer":
+            botton_timer["state"] = "disabled"
+        
     if borrar == True:
         borrar = False
 
