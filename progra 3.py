@@ -55,7 +55,7 @@ botton_pri_1 = 0
 botton_pri_2 = 0
 botton_pri_3 = 0
 botton_pri_4 = 0
-top_10_facil = [("NOMBRE1",0, ':', 0, ':', 5),("NOMBRE2",0, ':', 0, ':', 45),("NOMBRE3",0, ':', 0, ':', 54),("NOMBRE4",0, ':', 0, ':', 7),("NOMBRE5",0, ':', 0, ':', 5),("NOMBRE6",0, ':', 0, ':', 5),("NOMBRE7",0, ':', 0, ':', 5),("NOMBRE8",0, ':', 0, ':', 5),("NOMBRE9",0, ':', 0, ':', 5),("NOMBRE10",1, ':',34, ':', 5)]
+top_10_facil = []
 top_10_medio = []
 top_10_dificil = []
 entrada_hora = 0
@@ -6046,10 +6046,9 @@ def tiempo():
     global segundo_si_terminado
     global parada_final 
 
-    if control_reloj == "No":
-        return messagebox.showinfo(message="NO ESTA PARTICIPANDO PARA EL TOP 10")
-
     if iniciar_activado == True:
+        if control_reloj == "No":
+            return messagebox.showinfo(message="NO ESTA PARTICIPANDO PARA EL TOP 10")
         segundo = segundo_numero["text"]   
         minuto = minuto_numero["text"]
         hora = hora_numero["text"]
@@ -6171,18 +6170,52 @@ def confirmar():
 
 #=======================================================================================================#
 
-def top_10_todos():
+def salir_top(x):
+
+    global parada_final
+
+    parada_final = False
+    x.destroy()
+
+    tiempo()
     
-    ventana_top = tkinter.Tk()
-    ventana_top.title("VENTANA PRINCIPAL")
-    ventana_top.geometry("670x300")
+def top_10_todos():
 
     global top_10_facil
     global top_10_medio
     global top_10_dificil
+    global parada_final
+
+    ventana_top = tkinter.Tk()
+    ventana_top.title("LOS MEJORES")
+    ventana_top.geometry("604x300")
+    ventana_top.config(bg="#E8FFF0")
+
+    borde2 = tkinter.Canvas(ventana_top,bg="#B3DDFF",height=300,width=150)
+    borde2.place(x=0,y=30)
+
+    borde3 = tkinter.Canvas(ventana_top,bg="#BEF7FF",height=300,width=150)
+    borde3.place(x=150,y=30)
+
+    borde3 = tkinter.Canvas(ventana_top,bg="#BEFFDC",height=300,width=150)
+    borde3.place(x=300,y=30)
+
+    borde4 = tkinter.Canvas(ventana_top,bg="#BEFFC9",height=300,width=150)
+    borde4.place(x=450,y=30)
+
+    borde1 = tkinter.Canvas(ventana_top,bg="#E5E5E5",height=24,width=700)
+    borde1.place(x=-10,y=6)
+
+    borde0 = tkinter.Canvas(ventana_top,bg="#E5E5E5",height=223,width=700)
+    borde0.place(x=-10,y=40)
+
+    parada_final = True
+
+    salida = tkinter.Button(ventana_top,bg="#CDE8FF",text="Regresar",command=lambda: salir_top(ventana_top))
+    salida.place(x=5,y=270)
 
     y_todos = 40
-    nivel_facil = tkinter.Label(ventana_top,text="NIVEL FACIL:")
+    nivel_facil = tkinter.Label(ventana_top,text="NIVEL FACIL:",bg="#E5E5E5")
     nivel_facil.place(x=10,y=10)
     
     for ind, elemento in enumerate(top_10_facil,start=1):
@@ -6195,7 +6228,7 @@ def top_10_todos():
         y_todos+=20
 
     y_todos = 40
-    nivel_medio = tkinter.Label(ventana_top,text="NIVEL MEDIO:")
+    nivel_medio = tkinter.Label(ventana_top,text="NIVEL MEDIO:",bg="#E5E5E5")
     nivel_medio.place(x=240,y=10)
     
     for ind, elemento in enumerate(top_10_medio,start=1):
@@ -6208,7 +6241,7 @@ def top_10_todos():
         y_todos+=20
 
     y_todos = 40
-    nivel_dificil = tkinter.Label(ventana_top,text="NIVEL DIFICIL:")
+    nivel_dificil = tkinter.Label(ventana_top,text="NIVEL DIFICIL:",bg="#E5E5E5")
     nivel_dificil.place(x=470,y=10)
     
     for ind, elemento in enumerate(top_10_dificil,start=1):
@@ -6255,7 +6288,7 @@ def jugar():
     
     ventana.state(newstate="withdraw")
     ventana_jugar = tkinter.Tk()
-    ventana_jugar.title("VENTANA PRINCIPAL")
+    ventana_jugar.title("JUGAR")
     ventana_jugar.geometry("578x700")
     ventana_jugar.config(bg="#FFECEC")
 
@@ -6385,33 +6418,65 @@ def config():
       
     ventana.state(newstate="withdraw")
     ventana_config = tkinter.Tk()
-    ventana_config.title("VENTANA PRINCIPAL")
-    ventana_config.geometry("578x620")
+    ventana_config.title("REALIZAR CONFIGURACIONES")
+    ventana_config.geometry("300x350")
+    ventana_config.config(bg="#FFFFD8")
 
-    botton_regreso = tkinter.Button(ventana_config,text="X",command=lambda: regreso(ventana_config,ventana))
-    botton_regreso.place(x=558,y=65)
+    borde8 = tkinter.Canvas(ventana_config,bg="#8E8E8E",height=25,width=400)
+    borde8.place(x=-10,y=10)
+    
+    menu = tkinter.Label(ventana_config,text="CONFIGURACION",font=15,bg="#8E8E8E",fg="white")
+    menu.place(x=20,y=13)
 
-    nivel = tkinter.Label(ventana_config, text="Nivel:").place(x=50,y=50)
-    reloj = tkinter.Label(ventana_config, text="Reloj:").place(x=50,y=155)
-    digitos = tkinter.Label(ventana_config, text="Panel de Digitos:").place(x=50,y=260)
+    borde6 = tkinter.Canvas(ventana_config,bg="#AA94FF",height=200,width=90)
+    borde6.place(x=37,y=280)
 
-    facil = tkinter.Checkbutton(ventana_config, text="Facil",command=lambda: actualizar_difi_1(facil,medio,dificil))
+    borde5 = tkinter.Canvas(ventana_config,bg="#C8B9FF",height=22,width=400)
+    borde5.place(x=-10,y=258)
+
+    borde4 = tkinter.Canvas(ventana_config,bg="#C6FD80",height=80,width=90)
+    borde4.place(x=37,y=175)
+
+    borde3 = tkinter.Canvas(ventana_config,bg="#E0FFB9",height=22,width=400)
+    borde3.place(x=-10,y=153)
+
+    borde7 = tkinter.Canvas(ventana_config,bg="#E0FFB9",height=22,width=300)
+    borde7.place(x=120,y=206)
+
+    anuncio = tkinter.Label(ventana_config,text="No participa en el Top 10",bg="#E0FFB9")
+    anuncio.place(x=130,y=209)
+
+    borde2 = tkinter.Canvas(ventana_config,bg="#FD8080",height=80,width=90)
+    borde2.place(x=37,y=70)
+
+    borde1 = tkinter.Canvas(ventana_config,bg="#FFB1B1",height=22,width=400)
+    borde1.place(x=-10,y=47)
+
+    botton_regreso = tkinter.Button(ventana_config,text="x",command=lambda: regreso(ventana_config,ventana))
+    botton_regreso.config(bg="#FD8080",width=2,height=1)
+    botton_regreso.place(x=276,y=47)
+
+    nivel = tkinter.Label(ventana_config, text="Nivel:",bg="#FFB1B1").place(x=50,y=50)
+    reloj = tkinter.Label(ventana_config, text="Reloj:",bg="#E0FFB9").place(x=50,y=155)
+    digitos = tkinter.Label(ventana_config, text="Panel de Digitos:",bg="#C8B9FF").place(x=50,y=260)
+
+    facil = tkinter.Checkbutton(ventana_config,bg="#FD8080", text="Facil",command=lambda: actualizar_difi_1(facil,medio,dificil))
     facil.place(x=50,y=75)
-    medio = tkinter.Checkbutton(ventana_config, text="Medio",command=lambda: actualizar_difi_2(medio,facil,dificil))
+    medio = tkinter.Checkbutton(ventana_config,bg="#FD8080", text="Medio",command=lambda: actualizar_difi_2(medio,facil,dificil))
     medio.place(x=50,y=100)
-    dificil = tkinter.Checkbutton(ventana_config, text="Dificil",command=lambda: actualizar_difi_3(dificil,facil,medio))
+    dificil = tkinter.Checkbutton(ventana_config,bg="#FD8080", text="Dificil",command=lambda: actualizar_difi_3(dificil,facil,medio))
     dificil.place(x=50,y=125)
 
-    reloj_si = tkinter.Checkbutton(ventana_config, text="Si",command=lambda: actualizar_reloj_1(reloj_si,reloj_no,timer))
+    reloj_si = tkinter.Checkbutton(ventana_config,bg="#C6FD80", text="Si",command=lambda: actualizar_reloj_1(reloj_si,reloj_no,timer))
     reloj_si.place(x=50,y=180)
-    reloj_no = tkinter.Checkbutton(ventana_config, text="No",command=lambda: actualizar_reloj_2(reloj_no,reloj_si,timer))
+    reloj_no = tkinter.Checkbutton(ventana_config,bg="#C6FD80", text="No",command=lambda: actualizar_reloj_2(reloj_no,reloj_si,timer))
     reloj_no.place(x=50,y=205)
-    timer = tkinter.Checkbutton(ventana_config, text="Timer",command=lambda: actualizar_reloj_3(timer,reloj_no,reloj_si))
+    timer = tkinter.Checkbutton(ventana_config,bg="#C6FD80", text="Timer",command=lambda: actualizar_reloj_3(timer,reloj_no,reloj_si))
     timer.place(x=50,y=230)
 
-    panel_de = tkinter.Checkbutton(ventana_config, text="Derecha",command=lambda: actualizar_panel_1(panel_de,panel_iz))
+    panel_de = tkinter.Checkbutton(ventana_config,bg="#AA94FF", text="Derecha",command=lambda: actualizar_panel_1(panel_de,panel_iz))
     panel_de.place(x=50,y=285)
-    panel_iz = tkinter.Checkbutton(ventana_config, text="Izquierda",command=lambda: actualizar_panel_2(panel_iz,panel_de))
+    panel_iz = tkinter.Checkbutton(ventana_config,bg="#AA94FF", text="Izquierda",command=lambda: actualizar_panel_2(panel_iz,panel_de))
     panel_iz.place(x=50,y=310)
 
     if dificultad == "FACIL":
