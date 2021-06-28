@@ -1,3 +1,10 @@
+#================================================PROGRA 3===============================================#
+
+                                         #WANDER JIMENEZ CALVO#
+
+#===============================================FUTOSHIKI===============================================#
+
+
 #================================================IMPORTS================================================#
 
 import tkinter
@@ -112,6 +119,8 @@ botton_guardar = 0
 botton_cargar = 0
 
 desplegar = 0
+parada_top_10 = 0
+ya_termino = 0
 
 #================================================JUEGO 1================================================#
 
@@ -128,7 +137,7 @@ def juego_facil_1(ventana_jugar):
     global casilla1_2
     global casilla2_2
     global casilla3_2 
-    global casilla4_2
+    global casilla4_2 #VARIABLES GLOBALES PARA EL DESPLAZAMIENTO
     global casilla5_2
 
     global casilla1_3
@@ -155,7 +164,7 @@ def juego_facil_1(ventana_jugar):
     casilla2_1.place(x=197,y=150)
     casilla3_1 = tkinter.Button(ventana_jugar,height=2, width=5, command=cambio3_1)
     casilla3_1.place(x=267,y=150)
-    casilla4_1 = tkinter.Button(ventana_jugar,height=2, width=5, command=cambio4_1)
+    casilla4_1 = tkinter.Button(ventana_jugar,height=2, width=5, command=cambio4_1) #RENSTRICCIONES Y BOTONES
     casilla4_1.place(x=337,y=150)
     casilla5_1 = tkinter.Button(ventana_jugar,height=2, width=5, command=cambio5_1)
     casilla5_1.place(x=407,y=150)
@@ -214,7 +223,7 @@ def juego_facil_1(ventana_jugar):
     global guardar_casilla2_1
     global guardar_casilla3_1
     global guardar_casilla4_1
-    global guardar_casilla5_1
+    global guardar_casilla5_1 #CASILLAS GUARDADAS EN CASO DE GUARDAR JUEGO
     global guardar_casilla1_2
     global guardar_casilla2_2
     global guardar_casilla3_2
@@ -258,7 +267,7 @@ def juego_facil_1(ventana_jugar):
         casilla3_4.config(text=guardar_casilla3_4)
         casilla4_4.config(text=guardar_casilla4_4)
         casilla5_4.config(text=guardar_casilla5_4)
-        casilla1_5.config(text=guardar_casilla1_5)
+        casilla1_5.config(text=guardar_casilla1_5) #CASILLAS GUARDADAS EN CASO DE GUARDAR JUEGO
         casilla2_5.config(text=guardar_casilla2_5)
         casilla3_5.config(text=guardar_casilla3_5)
         casilla4_5.config(text=guardar_casilla4_5)
@@ -275,7 +284,7 @@ def cambio1_1():
     texto3 = casilla3_1["text"]
     texto4 = casilla4_1["text"]
     texto5 = casilla5_1["text"]
-    texto6 = casilla1_2["text"]
+    texto6 = casilla1_2["text"] #MODULOS DE JUEGO
     texto7 = casilla1_3["text"]
     texto8 = casilla1_4["text"]
     texto9 = casilla1_5["text"]    
@@ -297,7 +306,7 @@ def cambio2_1():
     texto2 = casilla1_1["text"]
     texto3 = casilla3_1["text"]
     texto4 = casilla4_1["text"]
-    texto5 = casilla5_1["text"]
+    texto5 = casilla5_1["text"] #MODULOS DE JUEGO
     texto6 = casilla2_2["text"]
     texto7 = casilla2_3["text"]
     texto8 = casilla2_4["text"]
@@ -320,7 +329,7 @@ def cambio3_1():
     texto2 = casilla1_1["text"]
     texto3 = casilla2_1["text"]
     texto4 = casilla4_1["text"]
-    texto5 = casilla5_1["text"]
+    texto5 = casilla5_1["text"] #MODULOS DE JUEGO
     texto6 = casilla3_2["text"]
     texto7 = casilla3_3["text"]
     texto8 = casilla3_4["text"]
@@ -342,7 +351,7 @@ def cambio4_1():
     texto4 = casilla3_1["text"]
     texto5 = casilla5_1["text"]
     texto6 = casilla4_2["text"]
-    texto7 = casilla4_3["text"]
+    texto7 = casilla4_3["text"] #MODULOS DE JUEGO
     texto8 = casilla4_4["text"]
     texto9 = casilla4_5["text"]    
     if texto5 != "":
@@ -364,7 +373,7 @@ def cambio5_1():
     texto3 = casilla2_1["text"]
     texto4 = casilla3_1["text"]
     texto5 = casilla4_1["text"]
-    texto6 = casilla5_2["text"]
+    texto6 = casilla5_2["text"] #MODULOS DE JUEGO
     texto7 = casilla5_3["text"]
     texto8 = casilla5_4["text"]
     texto9 = casilla5_5["text"]    
@@ -386,7 +395,7 @@ def cambio1_2():
     texto2 = casilla2_2["text"]
     texto3 = casilla3_2["text"]
     texto4 = casilla4_2["text"]
-    texto5 = casilla5_2["text"]
+    texto5 = casilla5_2["text"] #MODULOS DE JUEGO
     texto6 = casilla1_1["text"]
     texto7 = casilla1_3["text"]
     texto8 = casilla1_4["text"]
@@ -406,7 +415,7 @@ def cambio2_2():
     texto2 = casilla1_2["text"]
     texto3 = casilla3_2["text"]
     texto4 = casilla4_2["text"]
-    texto5 = casilla5_2["text"]
+    texto5 = casilla5_2["text"] #MODULOS DE JUEGO
     texto6 = casilla2_1["text"]
     texto7 = casilla2_3["text"]
     texto8 = casilla2_4["text"]
@@ -424,7 +433,7 @@ def cambio3_2():
         casilla3_2.config(text=numero_manejado)
     texto1 = casilla3_2["text"]   
     texto2 = casilla1_2["text"]
-    texto3 = casilla2_2["text"]
+    texto3 = casilla2_2["text"] #MODULOS DE JUEGO
     texto4 = casilla4_2["text"]
     texto5 = casilla5_2["text"]
     texto6 = casilla3_1["text"]
@@ -445,7 +454,7 @@ def cambio4_2():
     texto1 = casilla4_2["text"]   
     texto2 = casilla1_2["text"]
     texto3 = casilla3_2["text"]
-    texto4 = casilla2_2["text"]
+    texto4 = casilla2_2["text"] #MODULOS DE JUEGO
     texto5 = casilla5_2["text"]
     texto6 = casilla4_1["text"]
     texto7 = casilla4_3["text"]
@@ -464,7 +473,7 @@ def cambio5_2():
         casilla5_2.config(text=numero_manejado)
     texto1 = casilla5_2["text"]   
     texto2 = casilla1_2["text"]
-    texto3 = casilla3_2["text"]
+    texto3 = casilla3_2["text"] #MODULOS DE JUEGO
     texto4 = casilla4_2["text"]
     texto5 = casilla2_2["text"]
     texto6 = casilla5_1["text"]
@@ -487,7 +496,7 @@ def cambio1_3():
     texto3 = casilla3_3["text"]
     texto4 = casilla4_3["text"]
     texto5 = casilla5_3["text"]
-    texto6 = casilla1_1["text"]
+    texto6 = casilla1_1["text"] #MODULOS DE JUEGO
     texto7 = casilla1_2["text"]
     texto8 = casilla1_4["text"]
     texto9 = casilla1_5["text"]    
@@ -504,7 +513,7 @@ def cambio2_3():
         casilla2_3.config(text=numero_manejado)
     texto1 = casilla2_3["text"]   
     texto2 = casilla1_3["text"]
-    texto3 = casilla3_3["text"]
+    texto3 = casilla3_3["text"] #MODULOS DE JUEGO
     texto4 = casilla4_3["text"]
     texto5 = casilla5_3["text"]
     texto6 = casilla2_1["text"]
@@ -527,7 +536,7 @@ def cambio3_3():
     texto3 = casilla1_3["text"]
     texto4 = casilla4_3["text"]
     texto5 = casilla5_3["text"]
-    texto6 = casilla3_1["text"]
+    texto6 = casilla3_1["text"] #MODULOS DE JUEGO
     texto7 = casilla3_2["text"]
     texto8 = casilla3_4["text"]
     texto9 = casilla3_5["text"]    
@@ -546,7 +555,7 @@ def cambio4_3():
     texto2 = casilla2_3["text"]
     texto3 = casilla3_3["text"]
     texto4 = casilla1_3["text"]
-    texto5 = casilla5_3["text"]
+    texto5 = casilla5_3["text"] #MODULOS DE JUEGO
     texto6 = casilla4_1["text"]
     texto7 = casilla4_2["text"]
     texto8 = casilla4_4["text"]
@@ -566,7 +575,7 @@ def cambio5_3():
     texto2 = casilla2_3["text"]
     texto3 = casilla3_3["text"]
     texto4 = casilla4_3["text"]
-    texto5 = casilla1_3["text"]
+    texto5 = casilla1_3["text"] #MODULOS DE JUEGO
     texto6 = casilla5_1["text"]
     texto7 = casilla5_2["text"]
     texto8 = casilla5_4["text"]
@@ -725,7 +734,7 @@ def cambio3_5():
     texto1 = casilla3_5["text"]   
     texto2 = casilla2_5["text"]
     texto3 = casilla1_5["text"]
-    texto4 = casilla4_5["text"]
+    texto4 = casilla4_5["text"] #MODULOS DE JUEGO
     texto5 = casilla5_5["text"]
     texto6 = casilla3_1["text"]
     texto7 = casilla3_2["text"]
@@ -767,7 +776,7 @@ def cambio5_5():
         casilla5_5.config(text=numero_manejado)
     texto1 = casilla5_5["text"]   
     texto2 = casilla2_5["text"]
-    texto3 = casilla3_5["text"]
+    texto3 = casilla3_5["text"] #MODULOS DE JUEGO
     texto4 = casilla4_5["text"]
     texto5 = casilla1_5["text"]
     texto6 = casilla5_1["text"]
@@ -801,7 +810,7 @@ def juego_facil_2(ventana_jugar):
     global casilla5_2
 
     global casilla1_3
-    global casilla2_3
+    global casilla2_3 #VARIABLES GLOBALES PARA EL DESPLAZAMIENTO
     global casilla3_3
     global casilla4_3
     global casilla5_3
@@ -864,7 +873,7 @@ def juego_facil_2(ventana_jugar):
 
     casilla1_5 = tkinter.Button(ventana_jugar,height=2, width=5, command=cambio1_5_2)
     casilla1_5.place(x=127,y=410)
-    casilla2_5 = tkinter.Button(ventana_jugar,height=2, width=5, command=cambio2_5_2)
+    casilla2_5 = tkinter.Button(ventana_jugar,height=2, width=5, command=cambio2_5_2) #RENSTRICCIONES Y BOTONES
     casilla2_5.place(x=197,y=410)
     casilla3_5 = tkinter.Button(ventana_jugar,height=2, width=5, command=cambio3_5_2)
     casilla3_5.place(x=267,y=410)
@@ -891,7 +900,7 @@ def juego_facil_2(ventana_jugar):
     global guardar_casilla4_2
     global guardar_casilla5_2
     global guardar_casilla1_3
-    global guardar_casilla2_3
+    global guardar_casilla2_3 #CASILLAS GUARDADAS EN CASO DE GUARDAR JUEGO
     global guardar_casilla3_3
     global guardar_casilla4_3
     global guardar_casilla5_3
@@ -921,7 +930,7 @@ def juego_facil_2(ventana_jugar):
         casilla1_3.config(text=guardar_casilla1_3)
         casilla2_3.config(text=guardar_casilla2_3)
         casilla3_3.config(text=guardar_casilla3_3)
-        casilla4_3.config(text=guardar_casilla4_3)
+        casilla4_3.config(text=guardar_casilla4_3) #CASILLAS GUARDADAS EN CASO DE GUARDAR JUEGO
         casilla5_3.config(text=guardar_casilla5_3)
         casilla1_4.config(text=guardar_casilla1_4)
         casilla2_4.config(text=guardar_casilla2_4)
@@ -1008,7 +1017,7 @@ def cambio4_1_2():
         casilla4_1.config(text=numero_manejado)        
     texto1 = casilla4_1["text"]    
     texto2 = casilla1_1["text"]
-    texto3 = casilla2_1["text"]
+    texto3 = casilla2_1["text"] #MODULOS DE JUEGO
     texto4 = casilla3_1["text"]
     texto5 = casilla5_1["text"]
     texto6 = casilla4_2["text"]
@@ -1033,7 +1042,7 @@ def cambio5_1_2():
     texto2 = casilla1_1["text"]
     texto3 = casilla2_1["text"]
     texto4 = casilla3_1["text"]
-    texto5 = casilla4_1["text"]
+    texto5 = casilla4_1["text"] #MODULOS DE JUEGO
     texto6 = casilla5_2["text"]
     texto7 = casilla5_3["text"]
     texto8 = casilla5_4["text"]
@@ -1077,7 +1086,7 @@ def cambio2_2_2():
     texto3 = casilla3_2["text"]
     texto4 = casilla4_2["text"]
     texto5 = casilla5_2["text"]
-    texto6 = casilla2_1["text"]
+    texto6 = casilla2_1["text"] #MODULOS DE JUEGO
     texto7 = casilla2_3["text"]
     texto8 = casilla2_4["text"]
     texto9 = casilla2_5["text"]    
@@ -1478,7 +1487,7 @@ def juego_facil_3(ventana_jugar):
 
     global casilla1_3
     global casilla2_3
-    global casilla3_3
+    global casilla3_3 #VARIABLES GLOBALES PARA EL DESPLAZAMIENTO
     global casilla4_3
     global casilla5_3
 
@@ -1522,7 +1531,7 @@ def juego_facil_3(ventana_jugar):
     casilla2_3.place(x=197,y=280)
     casilla3_3 = tkinter.Button(ventana_jugar,height=2, width=5, command=cambio3_3_3)
     casilla3_3.place(x=267,y=280)
-    casilla4_3 = tkinter.Button(ventana_jugar,height=2, width=5, command=cambio4_3_3)
+    casilla4_3 = tkinter.Button(ventana_jugar,height=2, width=5, command=cambio4_3_3) #RENSTRICCIONES Y BOTONES
     casilla4_3.place(x=337,y=280)
     casilla5_3 = tkinter.Button(ventana_jugar,height=2, width=5, command=cambio5_3_3)
     casilla5_3.place(x=407,y=280)
@@ -1564,7 +1573,7 @@ def juego_facil_3(ventana_jugar):
     global guardar_casilla1_2
     global guardar_casilla2_2
     global guardar_casilla3_2
-    global guardar_casilla4_2
+    global guardar_casilla4_2 #CASILLAS GUARDADAS EN CASO DE GUARDAR JUEGO
     global guardar_casilla5_2
     global guardar_casilla1_3
     global guardar_casilla2_3
@@ -1588,7 +1597,7 @@ def juego_facil_3(ventana_jugar):
         casilla2_1.config(text=guardar_casilla2_1)
         casilla3_1.config(text=guardar_casilla3_1)
         casilla4_1.config(text=guardar_casilla4_1)
-        casilla5_1.config(text=guardar_casilla5_1)
+        casilla5_1.config(text=guardar_casilla5_1) #CASILLAS GUARDADAS EN CASO DE GUARDAR JUEGO
         casilla1_2.config(text=guardar_casilla1_2)
         casilla2_2.config(text=guardar_casilla2_2)
         casilla3_2.config(text=guardar_casilla3_2)
@@ -1821,7 +1830,7 @@ def cambio1_3_3():
     texto3 = casilla3_3["text"]
     texto4 = casilla4_3["text"]
     texto5 = casilla5_3["text"]
-    texto6 = casilla1_1["text"]
+    texto6 = casilla1_1["text"] #MODULOS DE JUEGO
     texto7 = casilla1_2["text"]
     texto8 = casilla1_4["text"]
     texto9 = casilla1_5["text"]
@@ -1844,7 +1853,7 @@ def cambio2_3_3():
     texto3 = casilla3_3["text"]
     texto4 = casilla4_3["text"]
     texto5 = casilla5_3["text"]
-    texto6 = casilla2_1["text"]
+    texto6 = casilla2_1["text"] #MODULOS DE JUEGO
     texto7 = casilla2_2["text"]
     texto8 = casilla2_4["text"]
     texto9 = casilla2_5["text"]
@@ -2155,7 +2164,7 @@ def juego_intermedio_1(ventana_jugar):
     global casilla1_3
     global casilla2_3
     global casilla3_3
-    global casilla4_3
+    global casilla4_3 #VARIABLES GLOBALES PARA EL DESPLAZAMIENTO
     global casilla5_3
 
     global casilla1_4
@@ -2174,7 +2183,7 @@ def juego_intermedio_1(ventana_jugar):
     casilla1_1.place(x=127,y=150)
     casilla2_1 = tkinter.Button(ventana_jugar,height=2, width=5, command=cambio2_1_1_intermedio)
     casilla2_1.place(x=197,y=150)
-    casilla3_1 = tkinter.Button(ventana_jugar,height=2, width=5, command=cambio3_1_1_intermedio)
+    casilla3_1 = tkinter.Button(ventana_jugar,height=2, width=5, command=cambio3_1_1_intermedio) #RENSTRICCIONES Y BOTONES
     casilla3_1.place(x=267,y=150)
     casilla4_1 = tkinter.Button(ventana_jugar,height=2, width=5, command=cambio4_1_1_intermedio)
     casilla4_1.place(x=337,y=150)
@@ -2247,7 +2256,7 @@ def juego_intermedio_1(ventana_jugar):
     global guardar_casilla5_2
     global guardar_casilla1_3
     global guardar_casilla2_3
-    global guardar_casilla3_3
+    global guardar_casilla3_3 #CASILLAS GUARDADAS EN CASO DE GUARDAR JUEGO
     global guardar_casilla4_3
     global guardar_casilla5_3
     global guardar_casilla1_4
@@ -2266,7 +2275,7 @@ def juego_intermedio_1(ventana_jugar):
         casilla1_1.config(text=guardar_casilla1_1)
         casilla2_1.config(text=guardar_casilla2_1)
         casilla3_1.config(text=guardar_casilla3_1)
-        casilla4_1.config(text=guardar_casilla4_1)
+        casilla4_1.config(text=guardar_casilla4_1) #CASILLAS GUARDADAS EN CASO DE GUARDAR JUEGO
         casilla5_1.config(text=guardar_casilla5_1)
         casilla1_2.config(text=guardar_casilla1_2)
         casilla2_2.config(text=guardar_casilla2_2)
@@ -2420,7 +2429,7 @@ def cambio2_2_1_intermedio():
     texto3 = casilla3_2["text"]
     texto4 = casilla4_2["text"]
     texto5 = casilla5_2["text"]
-    texto6 = casilla2_1["text"]
+    texto6 = casilla2_1["text"] #MODULOS DE JUEGO
     texto7 = casilla2_3["text"]
     texto8 = casilla2_4["text"]
     texto9 = casilla2_5["text"]    
@@ -2440,7 +2449,7 @@ def cambio3_2_1_intermedio():
     texto3 = casilla2_2["text"]
     texto4 = casilla4_2["text"]
     texto5 = casilla5_2["text"]
-    texto6 = casilla3_1["text"]
+    texto6 = casilla3_1["text"] #MODULOS DE JUEGO
     texto7 = casilla3_3["text"]
     texto8 = casilla3_4["text"]
     texto9 = casilla3_5["text"]    
@@ -2482,7 +2491,7 @@ def cambio5_2_1_intermedio():
     texto2 = casilla1_2["text"]
     texto3 = casilla3_2["text"]
     texto4 = casilla4_2["text"]
-    texto5 = casilla2_2["text"]
+    texto5 = casilla2_2["text"] #MODULOS DE JUEGO
     texto6 = casilla5_1["text"]
     texto7 = casilla5_3["text"]
     texto8 = casilla5_4["text"]
@@ -2503,7 +2512,7 @@ def cambio1_3_1_intermedio():
     texto3 = casilla3_3["text"]
     texto4 = casilla4_3["text"]
     texto5 = casilla5_3["text"]
-    texto6 = casilla1_1["text"]
+    texto6 = casilla1_1["text"] #MODULOS DE JUEGO
     texto7 = casilla1_2["text"]
     texto8 = casilla1_4["text"]
     texto9 = casilla1_5["text"]
@@ -2525,7 +2534,7 @@ def cambio2_3_1_intermedio():
     texto2 = casilla1_3["text"]
     texto3 = casilla3_3["text"]
     texto4 = casilla4_3["text"]
-    texto5 = casilla5_3["text"]
+    texto5 = casilla5_3["text"] #MODULOS DE JUEGO
     texto6 = casilla2_1["text"]
     texto7 = casilla2_2["text"]
     texto8 = casilla2_4["text"]
@@ -2852,7 +2861,7 @@ def juego_intermedio_2(ventana_jugar):
     global casilla1_3
     global casilla2_3
     global casilla3_3
-    global casilla4_3
+    global casilla4_3 #VARIABLES GLOBALES PARA EL DESPLAZAMIENTO
     global casilla5_3
 
     global casilla1_4
@@ -2949,7 +2958,7 @@ def juego_intermedio_2(ventana_jugar):
     global guardar_casilla5_3
     global guardar_casilla1_4
     global guardar_casilla2_4
-    global guardar_casilla3_4
+    global guardar_casilla3_4 #CASILLAS GUARDADAS EN CASO DE GUARDAR JUEGO
     global guardar_casilla4_4
     global guardar_casilla5_4
     global guardar_casilla1_5
@@ -2964,7 +2973,7 @@ def juego_intermedio_2(ventana_jugar):
         casilla2_1.config(text=guardar_casilla2_1)
         casilla3_1.config(text=guardar_casilla3_1)
         casilla4_1.config(text=guardar_casilla4_1)
-        casilla5_1.config(text=guardar_casilla5_1)
+        casilla5_1.config(text=guardar_casilla5_1) #CASILLAS GUARDADAS EN CASO DE GUARDAR JUEGO
         casilla1_2.config(text=guardar_casilla1_2)
         casilla2_2.config(text=guardar_casilla2_2)
         casilla3_2.config(text=guardar_casilla3_2)
@@ -3247,7 +3256,7 @@ def cambio3_3_2_intermedio():
     texto4 = casilla4_3["text"]
     texto5 = casilla5_3["text"]
     texto6 = casilla3_1["text"]
-    texto7 = casilla3_2["text"]
+    texto7 = casilla3_2["text"] #MODULOS DE JUEGO
     texto8 = casilla3_4["text"]
     texto9 = casilla3_5["text"]
     if texto4 != "":
@@ -3276,7 +3285,7 @@ def cambio4_3_2_intermedio():
     texto4 = casilla1_3["text"]
     texto5 = casilla5_3["text"]
     texto6 = casilla4_1["text"]
-    texto7 = casilla4_2["text"]
+    texto7 = casilla4_2["text"] #MODULOS DE JUEGO
     texto8 = casilla4_4["text"]
     texto9 = casilla4_5["text"]
     if texto5 != "":
@@ -3543,7 +3552,7 @@ def juego_intermedio_3(ventana_jugar):
     global casilla1_2
     global casilla2_2
     global casilla3_2
-    global casilla4_2
+    global casilla4_2 #VARIABLES GLOBALES PARA EL DESPLAZAMIENTO
     global casilla5_2
 
     global casilla1_3
@@ -3583,7 +3592,7 @@ def juego_intermedio_3(ventana_jugar):
     casilla3_2.place(x=267,y=215)
     casilla4_2 = tkinter.Button(ventana_jugar,height=2, width=5, command=cambio4_2_3_intermedio)
     casilla4_2.place(x=337,y=215)
-    casilla5_2 = tkinter.Button(ventana_jugar,height=2, width=5, command=cambio5_2_3_intermedio)
+    casilla5_2 = tkinter.Button(ventana_jugar,height=2, width=5, command=cambio5_2_3_intermedio) #RENSTRICCIONES Y BOTONES
     casilla5_2.place(x=407,y=215)
 
     casilla1_3 = tkinter.Button(ventana_jugar,height=2, width=5, command=cambio1_3_3_intermedio)
@@ -3648,7 +3657,7 @@ def juego_intermedio_3(ventana_jugar):
     global guardar_casilla2_4
     global guardar_casilla3_4
     global guardar_casilla4_4
-    global guardar_casilla5_4
+    global guardar_casilla5_4 #CASILLAS GUARDADAS EN CASO DE GUARDAR JUEGO
     global guardar_casilla1_5
     global guardar_casilla2_5
     global guardar_casilla3_5
@@ -3663,7 +3672,7 @@ def juego_intermedio_3(ventana_jugar):
         casilla4_1.config(text=guardar_casilla4_1)
         casilla5_1.config(text=guardar_casilla5_1)
         casilla1_2.config(text=guardar_casilla1_2)
-        casilla2_2.config(text=guardar_casilla2_2)
+        casilla2_2.config(text=guardar_casilla2_2) #CASILLAS GUARDADAS EN CASO DE GUARDAR JUEGO
         casilla3_2.config(text=guardar_casilla3_2)
         casilla4_2.config(text=guardar_casilla4_2)
         casilla5_2.config(text=guardar_casilla5_2)
@@ -3713,7 +3722,7 @@ def cambio2_1_3_intermedio():
     texto2 = casilla1_1["text"]
     texto3 = casilla3_1["text"]
     texto4 = casilla4_1["text"]
-    texto5 = casilla5_1["text"]
+    texto5 = casilla5_1["text"] #MODULOS DE JUEGO
     texto6 = casilla2_2["text"]
     texto7 = casilla2_3["text"]
     texto8 = casilla2_4["text"]
@@ -3733,7 +3742,7 @@ def cambio3_1_3_intermedio():
     texto2 = casilla1_1["text"]
     texto3 = casilla2_1["text"]
     texto4 = casilla4_1["text"]
-    texto5 = casilla5_1["text"]
+    texto5 = casilla5_1["text"] #MODULOS DE JUEGO
     texto6 = casilla3_2["text"]
     texto7 = casilla3_3["text"]
     texto8 = casilla3_4["text"]
@@ -3931,7 +3940,7 @@ def cambio2_3_3_intermedio():
     texto2 = casilla1_3["text"]
     texto3 = casilla3_3["text"]
     texto4 = casilla4_3["text"]
-    texto5 = casilla5_3["text"]
+    texto5 = casilla5_3["text"] #MODULOS DE JUEGO
     texto6 = casilla2_1["text"]
     texto7 = casilla2_2["text"]
     texto8 = casilla2_4["text"]
@@ -3953,7 +3962,7 @@ def cambio3_3_3_intermedio():
     texto1 = casilla3_3["text"]   
     texto2 = casilla2_3["text"]
     texto3 = casilla1_3["text"]
-    texto4 = casilla4_3["text"]
+    texto4 = casilla4_3["text"] #MODULOS DE JUEGO
     texto5 = casilla5_3["text"]
     texto6 = casilla3_1["text"]
     texto7 = casilla3_2["text"]
@@ -3980,7 +3989,7 @@ def cambio4_3_3_intermedio():
     texto2 = casilla2_3["text"]
     texto3 = casilla3_3["text"]
     texto4 = casilla1_3["text"]
-    texto5 = casilla5_3["text"]
+    texto5 = casilla5_3["text"] #MODULOS DE JUEGO
     texto6 = casilla4_1["text"]
     texto7 = casilla4_2["text"]
     texto8 = casilla4_4["text"]
@@ -4237,7 +4246,7 @@ def juego_dificil_1(ventana_jugar):
     global casilla4_1
     global casilla5_1
 
-    global casilla1_2
+    global casilla1_2 #VARIABLES GLOBALES PARA EL DESPLAZAMIENTO
     global casilla2_2
     global casilla3_2
     global casilla4_2
@@ -4289,7 +4298,7 @@ def juego_dificil_1(ventana_jugar):
     casilla2_3.place(x=197,y=280)
     casilla3_3 = tkinter.Button(ventana_jugar,height=2, width=5, command=cambio3_3_1_dificil)
     casilla3_3.place(x=267,y=280)
-    casilla4_3 = tkinter.Button(ventana_jugar,height=2, width=5, command=cambio4_3_1_dificil)
+    casilla4_3 = tkinter.Button(ventana_jugar,height=2, width=5, command=cambio4_3_1_dificil) #RENSTRICCIONES Y BOTONES
     casilla4_3.place(x=337,y=280)
     casilla5_3 = tkinter.Button(ventana_jugar,height=2, width=5, command=cambio5_3_1_dificil)
     casilla5_3.place(x=407,y=280)
@@ -4311,7 +4320,7 @@ def juego_dificil_1(ventana_jugar):
     casilla2_5.place(x=197,y=410)
     casilla3_5 = tkinter.Button(ventana_jugar,height=2, width=5, command=cambio3_5_1_dificil)
     casilla3_5.place(x=267,y=410)
-    casilla4_5 = tkinter.Button(ventana_jugar,height=2, width=5, command=cambio4_5_1_dificil)
+    casilla4_5 = tkinter.Button(ventana_jugar,height=2, width=5, command=cambio4_5_1_dificil) #RENSTRICCIONES Y BOTONES
     casilla4_5.place(x=337,y=410)
     casilla5_5 = tkinter.Button(ventana_jugar,height=2, width=5, command=cambio5_5_1_dificil)
     casilla5_5.place(x=407,y=410)
@@ -4349,7 +4358,7 @@ def juego_dificil_1(ventana_jugar):
     global guardar_casilla1_4
     global guardar_casilla2_4
     global guardar_casilla3_4
-    global guardar_casilla4_4
+    global guardar_casilla4_4 #CASILLAS GUARDADAS EN CASO DE GUARDAR JUEGO
     global guardar_casilla5_4
     global guardar_casilla1_5
     global guardar_casilla2_5
@@ -4366,7 +4375,7 @@ def juego_dificil_1(ventana_jugar):
         casilla5_1.config(text=guardar_casilla5_1)
         casilla1_2.config(text=guardar_casilla1_2)
         casilla2_2.config(text=guardar_casilla2_2)
-        casilla3_2.config(text=guardar_casilla3_2)
+        casilla3_2.config(text=guardar_casilla3_2) #CASILLAS GUARDADAS EN CASO DE GUARDAR JUEGO
         casilla4_2.config(text=guardar_casilla4_2)
         casilla5_2.config(text=guardar_casilla5_2)
         casilla1_3.config(text=guardar_casilla1_3)
@@ -4439,7 +4448,7 @@ def cambio3_1_1_dificil():
     texto3 = casilla2_1["text"]
     texto4 = casilla4_1["text"]
     texto5 = casilla5_1["text"]
-    texto6 = casilla3_2["text"]
+    texto6 = casilla3_2["text"] #MODULOS DE JUEGO
     texto7 = casilla3_3["text"]
     texto8 = casilla3_4["text"]
     texto9 = casilla3_5["text"]
@@ -4460,7 +4469,7 @@ def cambio4_1_1_dificil():
     texto1 = casilla4_1["text"]    
     texto2 = casilla1_1["text"]
     texto3 = casilla2_1["text"]
-    texto4 = casilla3_1["text"]
+    texto4 = casilla3_1["text"] #MODULOS DE JUEGO
     texto5 = casilla5_1["text"]
     texto6 = casilla4_2["text"]
     texto7 = casilla4_3["text"]
@@ -4532,7 +4541,7 @@ def cambio2_2_1_dificil():
     texto1 = casilla2_2["text"]   
     texto2 = casilla1_2["text"]
     texto3 = casilla3_2["text"]
-    texto4 = casilla4_2["text"]
+    texto4 = casilla4_2["text"] #MODULOS DE JUEGO
     texto5 = casilla5_2["text"]
     texto6 = casilla2_1["text"]
     texto7 = casilla2_3["text"]
@@ -4966,7 +4975,7 @@ def juego_dificil_2(ventana_jugar):
     global casilla1_2
     global casilla2_2
     global casilla3_2
-    global casilla4_2
+    global casilla4_2 #VARIABLES GLOBALES PARA EL DESPLAZAMIENTO
     global casilla5_2
 
     global casilla1_3
@@ -5069,7 +5078,7 @@ def juego_dificil_2(ventana_jugar):
     global guardar_casilla5_2
     global guardar_casilla1_3
     global guardar_casilla2_3
-    global guardar_casilla3_3
+    global guardar_casilla3_3 #CASILLAS GUARDADAS EN CASO DE GUARDAR JUEGO
     global guardar_casilla4_3
     global guardar_casilla5_3
     global guardar_casilla1_4
@@ -5103,7 +5112,7 @@ def juego_dificil_2(ventana_jugar):
         casilla1_4.config(text=guardar_casilla1_4)
         casilla2_4.config(text=guardar_casilla2_4)
         casilla3_4.config(text=guardar_casilla3_4)
-        casilla4_4.config(text=guardar_casilla4_4)
+        casilla4_4.config(text=guardar_casilla4_4) #CASILLAS GUARDADAS EN CASO DE GUARDAR JUEGO
         casilla5_4.config(text=guardar_casilla5_4)
         casilla1_5.config(text=guardar_casilla1_5)
         casilla2_5.config(text=guardar_casilla2_5)
@@ -5212,7 +5221,7 @@ def cambio5_1_2_dificil():
     texto1 = casilla5_1["text"]   
     texto2 = casilla1_1["text"]
     texto3 = casilla2_1["text"]
-    texto4 = casilla3_1["text"]
+    texto4 = casilla3_1["text"] #MODULOS DE JUEGO
     texto5 = casilla4_1["text"]
     texto6 = casilla5_2["text"]
     texto7 = casilla5_3["text"]
@@ -5260,7 +5269,7 @@ def cambio2_2_2_dificil():
     texto3 = casilla3_2["text"]
     texto4 = casilla4_2["text"]
     texto5 = casilla5_2["text"]
-    texto6 = casilla2_1["text"]
+    texto6 = casilla2_1["text"] #MODULOS DE JUEGO
     texto7 = casilla2_3["text"]
     texto8 = casilla2_4["text"]
     texto9 = casilla2_5["text"]    
@@ -5696,7 +5705,7 @@ def juego_dificil_3(ventana_jugar):
     global casilla5_2
 
     global casilla1_3
-    global casilla2_3
+    global casilla2_3 #VARIABLES GLOBALES PARA EL DESPLAZAMIENTO
     global casilla3_3
     global casilla4_3
     global casilla5_3
@@ -5717,7 +5726,7 @@ def juego_dificil_3(ventana_jugar):
     casilla1_1.place(x=127,y=150)
     casilla2_1 = tkinter.Button(ventana_jugar,height=2, width=5, command=cambio2_1_3_dificil)
     casilla2_1.place(x=197,y=150)
-    casilla3_1 = tkinter.Button(ventana_jugar,height=2, width=5, command=cambio3_1_3_dificil)
+    casilla3_1 = tkinter.Button(ventana_jugar,height=2, width=5, command=cambio3_1_3_dificil) #RENSTRICCIONES Y BOTONES
     casilla3_1.place(x=267,y=150)
     casilla4_1 = tkinter.Button(ventana_jugar,height=2, width=5, command=cambio4_1_3_dificil)
     casilla4_1.place(x=337,y=150)
@@ -5748,7 +5757,7 @@ def juego_dificil_3(ventana_jugar):
 
     casilla1_4 = tkinter.Button(ventana_jugar,height=2, width=5, command=cambio1_4_3_dificil)
     casilla1_4.place(x=127,y=345)
-    casilla2_4 = tkinter.Button(ventana_jugar,height=2, width=5, command=cambio2_4_3_dificil)
+    casilla2_4 = tkinter.Button(ventana_jugar,height=2, width=5, command=cambio2_4_3_dificil) #RENSTRICCIONES Y BOTONES
     casilla2_4.place(x=197,y=345)
     casilla3_4 = tkinter.Button(ventana_jugar,height=2, width=5, command=cambio3_4_3_dificil)
     casilla3_4.place(x=267,y=345)
@@ -5757,7 +5766,7 @@ def juego_dificil_3(ventana_jugar):
     casilla5_4 = tkinter.Button(ventana_jugar,height=2, width=5, command=cambio5_4_3_dificil)
     casilla5_4.place(x=407,y=345)
 
-    casilla1_5 = tkinter.Button(ventana_jugar,height=2, width=5, text=5, command=numero_fijo)
+    casilla1_5 = tkinter.Button(ventana_jugar,height=2, width=5, text=3, command=numero_fijo)
     casilla1_5.place(x=127,y=410)
     casilla2_5 = tkinter.Button(ventana_jugar,height=2, width=5, command=cambio2_5_3_dificil)
     casilla2_5.place(x=197,y=410)
@@ -5799,7 +5808,7 @@ def juego_dificil_3(ventana_jugar):
     global guardar_casilla4_3
     global guardar_casilla5_3
     global guardar_casilla1_4
-    global guardar_casilla2_4
+    global guardar_casilla2_4 #CASILLAS GUARDADAS EN CASO DE GUARDAR JUEGO
     global guardar_casilla3_4
     global guardar_casilla4_4
     global guardar_casilla5_4
@@ -5827,7 +5836,7 @@ def juego_dificil_3(ventana_jugar):
         casilla4_3.config(text=guardar_casilla4_3)
         casilla5_3.config(text=guardar_casilla5_3)
         casilla1_4.config(text=guardar_casilla1_4)
-        casilla2_4.config(text=guardar_casilla2_4)
+        casilla2_4.config(text=guardar_casilla2_4) #CASILLAS GUARDADAS EN CASO DE GUARDAR JUEGO
         casilla3_4.config(text=guardar_casilla3_4)
         casilla4_4.config(text=guardar_casilla4_4)
         casilla5_4.config(text=guardar_casilla5_4)
@@ -5848,7 +5857,7 @@ def cambio1_1_3_dificil():
     texto3 = casilla3_1["text"]
     texto4 = casilla4_1["text"]
     texto5 = casilla5_1["text"]
-    texto6 = casilla1_2["text"]
+    texto6 = casilla1_2["text"] #MODULOS DE JUEGO
     texto7 = casilla1_3["text"]
     texto8 = casilla1_4["text"]
     texto9 = casilla1_5["text"]
@@ -5870,7 +5879,7 @@ def cambio2_1_3_dificil():
     texto2 = casilla1_1["text"]
     texto3 = casilla3_1["text"]
     texto4 = casilla4_1["text"]
-    texto5 = casilla5_1["text"]
+    texto5 = casilla5_1["text"] #MODULOS DE JUEGO
     texto6 = casilla2_2["text"]
     texto7 = casilla2_3["text"]
     texto8 = casilla2_4["text"]
@@ -6299,7 +6308,7 @@ def cambio1_5_3_dificil():
     texto2 = casilla2_5["text"]
     texto3 = casilla3_5["text"]
     texto4 = casilla4_5["text"]
-    texto5 = casilla5_5["text"]
+    texto5 = casilla5_5["text"] #MODULOS DE JUEGO
     texto6 = casilla1_1["text"]
     texto7 = casilla1_2["text"]
     texto8 = casilla1_3["text"]
@@ -6320,7 +6329,7 @@ def cambio2_5_3_dificil():
     texto3 = casilla3_5["text"]
     texto4 = casilla4_5["text"]
     texto5 = casilla5_5["text"]
-    texto6 = casilla2_1["text"]
+    texto6 = casilla2_1["text"] #MODULOS DE JUEGO
     texto7 = casilla2_2["text"]
     texto8 = casilla2_3["text"]
     texto9 = casilla2_4["text"]
@@ -6542,21 +6551,21 @@ def inicio():
     global jugador
     global control_reloj
     global botton_timer
-    global top_10_facil
+    global top_10_facil #BOTON DE INICIO DEL PROGRAMA
     global top_10_medio
     global top_10_dificil
     global texto
     global botton_guardar
     global botton_cargar
     
-    if control_reloj == "Timer":
+    if control_reloj == "Timer": # SE RENSTRINGE EL TIMER PARA QUE NO SE SPAMEE
         if botton_timer["state"] != "disabled":
             return messagebox.showinfo(message="DEBE CONFIGURAR EL TIMER PRIMERO")
     
     texto = str(jugador.get())
     
     if texto == "":
-        return messagebox.showinfo(message="DEBE DIGITAR UN NOMBRE PRIMERO")
+        return messagebox.showinfo(message="DEBE DIGITAR UN NOMBRE PRIMERO") # RENSTRICCIONES
     if len(texto) > 20:
         return messagebox.showinfo(message="EL NOMBRE DEBE DE ESTAR ENRTE 1 Y 20 CARACTERES")
 
@@ -6572,14 +6581,14 @@ def inicio():
         if elemento[0] == texto:
             return messagebox.showinfo(message="EL NOMBRE YA SE ENCUENTRA EN EL TOP")
     
-    iniciar_activado = True
+    iniciar_activado = True # SE ACTIVA LA VARIABLE PARA DESBLOQUEAR OTRAS PARTES DEL PROGRAMA
 
     botton_cargar["state"] = "disabled"
     botton_guardar["state"] = "normal"
     
     botton_pri_2["state"] = "normal"
     botton_pri_3["state"] = "normal"
-    botton_pri_4["state"] = "normal"
+    botton_pri_4["state"] = "normal" # SE DESACTIVAN LOS BOTONES CORRESPODIENTES
     botton_pri_1["state"] = "disabled"
  
     tiempo()
@@ -6592,15 +6601,16 @@ def tiempo():
     global segundo_numero
     global desactivar
     global iniciar_activado
-    global control_reloj
+    global control_reloj # GLOBALES NECESARIAS PARA MANEJAR EL TIEMPO DE ACUERDO AL SISTEMA
     global hora_si_terminado
     global minuto_si_terminado
     global segundo_si_terminado
     global parada_final
     global juego_cargado
+    global parada_top_10
 
     if iniciar_activado == True:
-        if control_reloj == "No":
+        if control_reloj == "No": # SI NO SE SELECCIONA RELOJ NO PARTICIPA EN EL TOP 10 
             return messagebox.showinfo(message="NO ESTA PARTICIPANDO PARA EL TOP 10")
         segundo = segundo_numero["text"]   
         minuto = minuto_numero["text"]
@@ -6608,7 +6618,7 @@ def tiempo():
         
         if control_reloj == "Si":
             if segundo == 59:
-                minuto_numero.config(text=minuto+1)
+                minuto_numero.config(text=minuto+1) # SI EL RELOJ ES SI ENTONCES SE HACEN SUMAS 
                 segundo = -1       
                 if minuto == 59:
                     hora_numero.config(text=hora+1)
@@ -6621,7 +6631,7 @@ def tiempo():
                 actualizar.after(1000,tiempo)
 
         if control_reloj == "Timer":
-            if segundo == 0 and minuto == 0 and hora == 0:
+            if segundo == 0 and minuto == 0 and hora == 0: # SI ES TIMER SE HACEN RESTAS
                 mensaje = messagebox.askquestion(message="SE HA ACABADO EL TIEMPO, ¿DESEA CONTINUAR?")
                 if mensaje == "no":
                     ventana_jugar.destroy()
@@ -6629,7 +6639,7 @@ def tiempo():
                 if mensaje == "yes":
                     control_reloj = "Si"
                     minuto_numero.config(text=minuto_si_terminado)
-                    segundo_numero.config(text=segundo_si_terminado)
+                    segundo_numero.config(text=segundo_si_terminado) # SI TERMINA EL TIEMPO Y QUIERE CONTINUAR SE PASA A RELOJ
                     hora_numero.config(text=hora_si_terminado) 
                     return tiempo()
             if segundo == 0:
@@ -6642,42 +6652,44 @@ def tiempo():
             segundo_numero.config(text=segundo-1)
 
             if parada_final != True:
-                actualizar = tkinter.Label()
+                actualizar = tkinter.Label() # SE PARA CUANDO LLEGA AL FINAL 
                 actualizar.after(1000,tiempo)
 
-    if juego_cargado == False:
-        if iniciar_activado == False:
-            minuto_numero.config(text=0)
-            segundo_numero.config(text=0)
-            hora_numero.config(text=0)
+    if parada_top_10 == False:
+        if juego_cargado == False:
+            if iniciar_activado == False: # SE PARA CUANDO ABRE EL TOP 10
+                minuto_numero.config(text=0)
+                segundo_numero.config(text=0)
+                hora_numero.config(text=0)
         
     juego_cargado = False
+    parada_top_10 = False
 
 def borrar_el_juego(ventana_jugar):
 
     global borrar
-    global iniciar_activado
+    global iniciar_activado # GLOBALES PARA BORRAR EL JUEGO 
 
     borrar = True
 
     if iniciar_activado == True:
-        mensaje = messagebox.askquestion(message="¿ESTÁ SEGURO DE BORRAR EL JUEGO?")
-        if mensaje == "yes":
+        mensaje = messagebox.askquestion(message="¿ESTÁ SEGURO DE BORRAR EL JUEGO?") # SE CONFIRMA 
+        if mensaje == "yes": # SE DESTRUYE Y SE CREA CON EL MISMO NIVEL GRACIAS A LA VARIABLE GLOBAL BORRAR 
             ventana_jugar.destroy()        
             return jugar()
 
 def terminar_juego(ventana_jugar):
-    global iniciar_activado
+    global iniciar_activado # GLOBALES NECESARIAS 
     if iniciar_activado == True:
-        mensaje = messagebox.askquestion(message="¿ESTÁ SEGURO DE TERMINAR EL JUEGO?")
+        mensaje = messagebox.askquestion(message="¿ESTÁ SEGURO DE TERMINAR EL JUEGO?") # SE CONFIRMA 
         if mensaje == "yes":
-            ventana_jugar.destroy()        
+            ventana_jugar.destroy()        # SE DESTRUYE TODO Y COMIENZA DESDE 0
             return jugar()
 
 def regreso(x,y):
     
     global juego_cargado
-    juego_cargado = False
+    juego_cargado = False # BOTON QUE SIRVE PARA REGRESAR
 
     x.destroy()
     y.deiconify()
@@ -6688,7 +6700,7 @@ def confirmar():
     global entrada_segundo
     global hora_numero
     global minuto_numero
-    global segundo_numero
+    global segundo_numero #GLOBALES NECESARIAS
     global botton_timer
     global hora_si_terminado
     global minuto_si_terminado
@@ -6701,7 +6713,7 @@ def confirmar():
     if hora == "":
         hora = 0
     if minuto == "":
-        minuto = 0
+        minuto = 0 # SE ESTABLECEN LOS VALORES PARA EL TIMER Y SUS RENSTRICCIONES
     if segundo == "":
         segundo = 0
 
@@ -6727,15 +6739,14 @@ def confirmar():
     minuto_si_terminado = minuto
     segundo_si_terminado = segundo
     
-    botton_timer["state"] = "disabled"
+    botton_timer["state"] = "disabled" # SE DESACTIVA EL BOTON DE TIMER 
 
 #=======================================================================================================#
 
 def salir_top(x):
-
     global parada_final
+    parada_final = False # BOTON PARA SALIR DEL TOP, QUE PERMITE QUE SE PARE EL TIEMPO CON LA VARIABLE PARADA_FINAL
 
-    parada_final = False
     x.destroy()
 
     tiempo()
@@ -6745,12 +6756,13 @@ def top_10_todos():
     global top_10_facil
     global top_10_medio
     global top_10_dificil
-    global parada_final
+    global parada_top_10
     global archiv_top
+    global parada_final # GLOBALES DEL TOP 
 
     ventana_top = tkinter.Tk()
     ventana_top.title("LOS MEJORES")
-    ventana_top.geometry("604x300")
+    ventana_top.geometry("604x300") 
     ventana_top.config(bg="#E8FFF0")
 
     borde2 = tkinter.Canvas(ventana_top,bg="#B3DDFF",height=300,width=150)
@@ -6759,7 +6771,7 @@ def top_10_todos():
     borde3 = tkinter.Canvas(ventana_top,bg="#BEF7FF",height=300,width=150)
     borde3.place(x=150,y=30)
 
-    borde3 = tkinter.Canvas(ventana_top,bg="#BEFFDC",height=300,width=150)
+    borde3 = tkinter.Canvas(ventana_top,bg="#BEFFDC",height=300,width=150) # DECORACION 
     borde3.place(x=300,y=30)
 
     borde4 = tkinter.Canvas(ventana_top,bg="#BEFFC9",height=300,width=150)
@@ -6771,6 +6783,7 @@ def top_10_todos():
     borde0 = tkinter.Canvas(ventana_top,bg="#E5E5E5",height=223,width=700)
     borde0.place(x=-10,y=40)
 
+    parada_top_10 = True
     parada_final = True
 
     salida = tkinter.Button(ventana_top,bg="#CDE8FF",text="Regresar",command=lambda: salir_top(ventana_top))
@@ -6780,7 +6793,7 @@ def top_10_todos():
     nivel_facil = tkinter.Label(ventana_top,text="NIVEL FACIL:",bg="#E5E5E5")
     nivel_facil.place(x=10,y=10)
     
-    for ind, elemento in enumerate(top_10_facil,start=1):
+    for ind, elemento in enumerate(top_10_facil,start=1): # POR CADA LISTA SE RECORRE Y SE MONTA EL NOMBRE JUNTO AL TIEMPO
         clock = ""
         for x in elemento[1:]:
             clock = clock+str(x)
@@ -6793,7 +6806,7 @@ def top_10_todos():
     nivel_medio = tkinter.Label(ventana_top,text="NIVEL MEDIO:",bg="#E5E5E5")
     nivel_medio.place(x=240,y=10)
     
-    for ind, elemento in enumerate(top_10_medio,start=1):
+    for ind, elemento in enumerate(top_10_medio,start=1): # POR CADA LISTA SE RECORRE Y SE MONTA EL NOMBRE JUNTO AL TIEMPO
         clock = ""
         for x in elemento[1:]:
             clock = clock+str(x)
@@ -6806,7 +6819,7 @@ def top_10_todos():
     nivel_dificil = tkinter.Label(ventana_top,text="NIVEL DIFICIL:",bg="#E5E5E5")
     nivel_dificil.place(x=470,y=10)
     
-    for ind, elemento in enumerate(top_10_dificil,start=1):
+    for ind, elemento in enumerate(top_10_dificil,start=1): # POR CADA LISTA SE RECORRE Y SE MONTA EL NOMBRE JUNTO AL TIEMPO
         clock = ""
         for x in elemento[1:]:
             clock = clock+str(x)
@@ -6818,7 +6831,7 @@ def top_10_todos():
     archiv_top =open("futoshiki2021top10.dat","w")
 
     archiv_top.write("\nFacil: " + str(top_10_facil))
-    archiv_top.write("\nMedio: " + str(top_10_medio))
+    archiv_top.write("\nMedio: " + str(top_10_medio)) # SE ARCHIVA EL TOP 
     archiv_top.write("\nDificl: " + str(top_10_dificil))
     archiv_top.close()
     
@@ -6832,7 +6845,7 @@ def guardar_game():
     global casilla4_1
     global casilla5_1
     global casilla1_2
-    global casilla2_2
+    global casilla2_2 #GLOBALES PARA GUARDAR EL JUEGO 
     global casilla3_2
     global casilla4_2
     global casilla5_2
@@ -6859,7 +6872,7 @@ def guardar_game():
     global guardar_casilla5_1
     global guardar_casilla1_2
     global guardar_casilla2_2
-    global guardar_casilla3_2
+    global guardar_casilla3_2 #GLOBALES PARA GUARDAR EL JUEGO 
     global guardar_casilla4_2
     global guardar_casilla5_2
     global guardar_casilla1_3
@@ -6879,7 +6892,7 @@ def guardar_game():
     global guardar_casilla5_5
 
     global guardar_dificultad
-    global guardar_control_reloj
+    global guardar_control_reloj #GLOBALES PARA GUARDAR EL JUEGO 
     global guardar_panel
     global guardar_suerte
     
@@ -6889,7 +6902,7 @@ def guardar_game():
     global suerte
 
     global hora_numero
-    global minuto_numero
+    global minuto_numero #GLOBALES PARA GUARDAR EL JUEGO 
     global segundo_numero
 
     global guardar_hora
@@ -6915,7 +6928,7 @@ def guardar_game():
     guardar_casilla3_5 = casilla3_5["text"]
     guardar_casilla4_1 = casilla4_1["text"]
     guardar_casilla4_2 = casilla4_2["text"]
-    guardar_casilla4_3 = casilla4_3["text"]
+    guardar_casilla4_3 = casilla4_3["text"] #SE ASIGNAN LOS VALORES A VARIABLES PARA GUARDARLOS
     guardar_casilla4_4 = casilla4_4["text"]
     guardar_casilla4_5 = casilla4_5["text"]
     guardar_casilla5_1 = casilla5_1["text"]
@@ -6929,9 +6942,14 @@ def guardar_game():
     guardar_panel = panel
     guardar_suerte = suerte
 
-    guardar_hora = hora_numero["text"]
-    guardar_minuto = minuto_numero["text"]
-    guardar_segundo = segundo_numero["text"]
+    if control_reloj != "No":
+        guardar_hora = hora_numero["text"]
+        guardar_minuto = minuto_numero["text"]
+        guardar_segundo = segundo_numero["text"] # SI EL RELOJ ESTA EN NO NO SE GUARDA EL TIEMPO 
+    else:
+        guardar_hora = 0
+        guardar_minuto = 0
+        guardar_segundo = 0         
 
     archiv_juego =open("futoshiki2021juegoactual.dat","w")
 
@@ -6949,7 +6967,7 @@ def guardar_game():
     archiv_juego.write("\nCasilla3_2: " + str(guardar_casilla3_2))
     archiv_juego.write("\nCasilla3_3: " + str(guardar_casilla3_3))
     archiv_juego.write("\nCasilla3_4: " + str(guardar_casilla3_4))
-    archiv_juego.write("\nCasilla3_5: " + str(guardar_casilla3_5))
+    archiv_juego.write("\nCasilla3_5: " + str(guardar_casilla3_5)) # SE ARCHIVA EL JUEGO ACTUAL 
     archiv_juego.write("\nCasilla4_1: " + str(guardar_casilla4_1))
     archiv_juego.write("\nCasilla4_2: " + str(guardar_casilla4_2))
     archiv_juego.write("\nCasilla4_3: " + str(guardar_casilla4_3))
@@ -6979,7 +6997,7 @@ def cargar_game(x):
     global dificultad
     global control_reloj
     global panel
-    global suerte
+    global suerte #GLOBALES PARA CARGAR EL JUEGO 
 
     global hora_numero
     global minuto_numero
@@ -6998,7 +7016,7 @@ def cargar_game(x):
 
     dificultad = guardar_dificultad
     control_reloj = guardar_control_reloj
-    panel = guardar_panel
+    panel = guardar_panel # SE HACE LO MISMO QUE GUARDAR PERO AL REVES Y SE COMANDA A JUGAR
     suerte = guardar_suerte
     hora_numero = guardar_hora
     minuto_numero = guardar_minuto
@@ -7028,7 +7046,7 @@ def jugar():
     global numero_manejado
     global borrar
     global botton_pri_1
-    global botton_pri_2
+    global botton_pri_2 #GLOBALES DE JUGAR
     global botton_pri_3
     global botton_pri_4
     global jugador
@@ -7044,10 +7062,13 @@ def jugar():
     global guardar_segundo
     global botton_guardar
     global botton_cargar
+    global ya_termino
+
+    ya_termino = False
     
     ventana.state(newstate="withdraw")
     ventana_jugar = tkinter.Tk()
-    ventana_jugar.title("JUGAR")
+    ventana_jugar.title("JUGAR") # SE CREA LA VENTANA 
     ventana_jugar.geometry("578x700")
     ventana_jugar.config(bg="#FFECEC")
 
@@ -7057,7 +7078,7 @@ def jugar():
     numero_manejado = 0
 
     borde1 = tkinter.Canvas(ventana_jugar, bg="#FFEA82", height=43, width=181).place(x=195,y=30)    
-    borde2 = tkinter.Canvas(ventana_jugar, bg="#B9FFDE", height=20, width=193).place(x=0,y=40)
+    borde2 = tkinter.Canvas(ventana_jugar, bg="#B9FFDE", height=20, width=193).place(x=0,y=40) # DECORACION 
     borde3 = tkinter.Canvas(ventana_jugar, bg="#FFB9FE", height=20, width=193).place(x=381,y=40)
 
     futoshiki = tkinter.Label(ventana_jugar, text="FUTOSHIKI", font=("Times", "24", "bold italic"), fg="white")
@@ -7073,7 +7094,7 @@ def jugar():
     if panel == "Derecha":
         botton_num_1 = tkinter.Button(ventana_jugar, text="1", height=2, width=5, command=activado_1)
         botton_num_1.place(x=487,y=200)
-        botton_num_2 = tkinter.Button(ventana_jugar, text="2", height=2, width=5, command=activado_2)
+        botton_num_2 = tkinter.Button(ventana_jugar, text="2", height=2, width=5, command=activado_2) # BOTONES DE PANEL 
         botton_num_2.place(x=487,y=240)
         botton_num_3 = tkinter.Button(ventana_jugar, text="3", height=2, width=5, command=activado_3)
         botton_num_3.place(x=487,y=280)
@@ -7086,7 +7107,7 @@ def jugar():
         botton_num_1.place(x=50,y=200)
         botton_num_2 = tkinter.Button(ventana_jugar, text="2", height=2, width=5, command=activado_2)
         botton_num_2.place(x=50,y=240)
-        botton_num_3 = tkinter.Button(ventana_jugar, text="3", height=2, width=5, command=activado_3)
+        botton_num_3 = tkinter.Button(ventana_jugar, text="3", height=2, width=5, command=activado_3) # BOTONES DE PANEL A LA IZQUIERDA
         botton_num_3.place(x=50,y=280)
         botton_num_4 = tkinter.Button(ventana_jugar, text="4", height=2, width=5, command=activado_4)
         botton_num_4.place(x=50,y=320)  
@@ -7098,7 +7119,7 @@ def jugar():
         fondo.place(x=30,y=560)
         horas_reloj = tkinter.Label(ventana_jugar, text="Horas",bg="#99FFA6",width=8)
         horas_reloj.place(x=32,y=550)
-        minutos_reloj = tkinter.Label(ventana_jugar, text="Minutos",bg="#B9FFDE",width=8)
+        minutos_reloj = tkinter.Label(ventana_jugar, text="Minutos",bg="#B9FFDE",width=8) #SE ENSENA EL RELOJ SI ESTA ACTIVADO EL TIMER O EL SI 
         minutos_reloj.place(x=92,y=550)
         segundos_reloj = tkinter.Label(ventana_jugar, text="Segundos",bg="#FFB9FE",width=8)
         segundos_reloj.place(x=152,y=550)
@@ -7115,7 +7136,7 @@ def jugar():
         entrada_hora.place(x=33,y=650)
         entrada_minuto = tkinter.Entry(ventana_jugar,width=10)
         entrada_minuto.place(x=90,y=650)
-        entrada_segundo = tkinter.Entry(ventana_jugar,width=10)
+        entrada_segundo = tkinter.Entry(ventana_jugar,width=10) #SE AJUSTAN 3 ENTRADAS SI ESTA ACTIVO EL TIMER 
         entrada_segundo.place(x=153,y=650)
         botton_timer = tkinter.Button(ventana_jugar,text="Timer",bg="#FFEA82",command=confirmar)
         botton_timer.place(x=220,y=647)
@@ -7127,7 +7148,7 @@ def jugar():
     botton_cargar = tkinter.Button(ventana_jugar,text="Cargar Juego",bg="#AAAAAA",width=20,fg="white",command=lambda: cargar_game(ventana_jugar))
     botton_cargar.place(x=325,y=600)
 
-    botton_pri_1 = tkinter.Button(ventana_jugar, text="INICIAR JUEGO", height=2, width=13, bg="#99FFA6", command=inicio)
+    botton_pri_1 = tkinter.Button(ventana_jugar, text="INICIAR JUEGO", height=2, width=13, bg="#99FFA6", command=inicio) # BOTONES PRINCIPALES 
     botton_pri_1.place(x=20, y=480)
     botton_pri_2 = tkinter.Button(ventana_jugar, text="BORRAR JUGADA", height=2, width=13, bg="#FFB9FE")
     botton_pri_2.place(x=130, y=480)
@@ -7145,13 +7166,14 @@ def jugar():
     botton_regreso.place(x=558,y=65)
 
     if borrar == False:
-        suerte = random.randint(1,3)
+        suerte = random.randint(1,3) # SI BORRAR ESTA ACTIVO ENTONCES NO SE CREA OTRO NUMERO DE SUERTE PARA TIRAR EL MISMO JUEGO 
 
     if juego_cargado == True:
         suerte = guardar_suerte
-        hora_numero.config(text=int(guardar_hora))
-        minuto_numero.config(text=int(guardar_minuto))
-        segundo_numero.config(text=int(guardar_segundo))
+        if control_reloj != "No":
+            hora_numero.config(text=int(guardar_hora))
+            minuto_numero.config(text=int(guardar_minuto))
+            segundo_numero.config(text=int(guardar_segundo))
         if control_reloj == "Timer":
             botton_timer["state"] = "disabled"
         
@@ -7167,7 +7189,7 @@ def jugar():
             juego_facil_3(ventana_jugar)
     if dificultad == "MEDIO":
         if suerte == 1:
-            juego_intermedio_1(ventana_jugar)
+            juego_intermedio_1(ventana_jugar) #SE ACTIVAN LOS DIFERENTES JUEGOS SEGUN LA SUERTE 
         if suerte == 2:
             juego_intermedio_2(ventana_jugar)
         if suerte == 3:
@@ -7195,7 +7217,7 @@ def config():
 
     archiv_config.write("\nNivel: " + dificultad)
     archiv_config.write("\nReloj: " + control_reloj)
-    archiv_config.write("\nPanel: " + panel)
+    archiv_config.write("\nPanel: " + panel) # SE ARCHIVA LA CONFIGURACION 
 
     archiv_config.close()
       
@@ -7217,7 +7239,7 @@ def config():
     borde5 = tkinter.Canvas(ventana_config,bg="#C8B9FF",height=22,width=400)
     borde5.place(x=-10,y=258)
 
-    borde4 = tkinter.Canvas(ventana_config,bg="#C6FD80",height=80,width=90)
+    borde4 = tkinter.Canvas(ventana_config,bg="#C6FD80",height=80,width=90) #DECORACION 
     borde4.place(x=37,y=175)
 
     borde3 = tkinter.Canvas(ventana_config,bg="#E0FFB9",height=22,width=400)
@@ -7266,7 +7288,7 @@ def config():
         facil.select()
     if dificultad == "MEDIO":
         medio.select()
-    if dificultad == "DIFICIL":
+    if dificultad == "DIFICIL": #SE ACTIVAN LOS BOTONES SOLO 1 A LA VEZ 
         dificil.select()
 
     if control_reloj == "Si":
@@ -7286,7 +7308,7 @@ def actualizar_difi_1(x,y,z):
     global dificultad
     
     x.select()
-    y.deselect()
+    y.deselect() # MODULO PARA ACTUALIZAR CONFIGURACION
     z.deselect()
 
     dificultad = "FACIL"
@@ -7296,7 +7318,7 @@ def actualizar_difi_2(x,y,z):
     global dificultad
     
     x.select()
-    y.deselect()
+    y.deselect() # MODULO PARA ACTUALIZAR CONFIGURACION
     z.deselect()
 
     dificultad = "MEDIO"        
@@ -7307,7 +7329,7 @@ def actualizar_difi_3(x,y,z):
     
     x.select()
     y.deselect()
-    z.deselect()
+    z.deselect() # MODULO PARA ACTUALIZAR CONFIGURACION
 
     dificultad = "DIFICIL"
 
@@ -7317,7 +7339,7 @@ def actualizar_reloj_1(x,y,z):
     
     x.select()
     y.deselect()
-    z.deselect()
+    z.deselect() # MODULO PARA ACTUALIZAR CONFIGURACION
 
     control_reloj = "Si"
     
@@ -7326,7 +7348,7 @@ def actualizar_reloj_2(x,y,z):
     global control_reloj
     
     x.select()
-    y.deselect()
+    y.deselect() # MODULO PARA ACTUALIZAR CONFIGURACION
     z.deselect()
 
     control_reloj = "No"
@@ -7337,7 +7359,7 @@ def actualizar_reloj_3(x,y,z):
     
     x.select()
     y.deselect()
-    z.deselect()
+    z.deselect() # MODULO PARA ACTUALIZAR CONFIGURACION
 
     control_reloj = "Timer"
 
@@ -7346,7 +7368,7 @@ def actualizar_panel_1(x,y):
     global panel
     
     x.select()
-    y.deselect()
+    y.deselect() # MODULO PARA ACTUALIZAR CONFIGURACION
 
     panel = "Derecha"
 
@@ -7355,7 +7377,7 @@ def actualizar_panel_2(x,y):
     global panel
     
     x.select()
-    y.deselect()
+    y.deselect() # MODULO PARA ACTUALIZAR CONFIGURACION
 
     panel = "Izquierda"
     
@@ -7375,10 +7397,11 @@ def ganador():
     global top_10_medio
     global top_10_dificil
     global texto
-    global hora_si_terminado
+    global hora_si_terminado # VARIABLES DE GANADOR
     global minuto_si_terminado
     global segundo_si_terminado
     global parada_final
+    global ya_termino
 
     texto1 = casilla1_1["text"]    
     texto2 = casilla2_1["text"]
@@ -7393,7 +7416,7 @@ def ganador():
     texto11 = casilla1_3["text"]
     texto12 = casilla2_3["text"]
     texto13 = casilla3_3["text"]
-    texto14 = casilla4_3["text"]
+    texto14 = casilla4_3["text"] # SE RESCATAN LOS DATOS DE CADA CASILLA
     texto15 = casilla5_3["text"]
     texto16 = casilla1_4["text"]
     texto17 = casilla2_4["text"]
@@ -7412,84 +7435,90 @@ def ganador():
     and texto15 != "" and texto16 != "" and texto17 != "" and texto18 != "" and texto19 != "" and texto20 != "" and texto21 != "" \
     and texto22 != "" and texto23 != "" and texto24 != "" and texto25 != "":
 
-        parada_final = True
-        
-        if segundo_numero != 0 and minuto_numero != 0 and hora_numero != 0:
-            if control_reloj == "Si":
-                segundo = segundo_numero["text"]   
-                minuto = minuto_numero["text"]
-                hora = hora_numero["text"]
-                numero_manejado = 0
-                tiempo_durado = str(hora)+" "+"HORAS CON"+" "+str(minuto)+" "+"MINUTOS Y"+" "+str(segundo)+" "+"SEGUNDOS"
-                mensaje = messagebox.showinfo(message="¡EXCELENTE! JUEGO TERMINADO CON ÉXITO, HA TARDADO: "+tiempo_durado)
-            if control_reloj == "Timer":
-                segundo = int(segundo_numero["text"])
-                minuto = int(minuto_numero["text"])*60
-                hora = int(hora_numero["text"])*3600
-                numero_manejado = 0
-                hora_si_terminado = int(hora_si_terminado)*3600
-                minuto_si_terminado = int(minuto_si_terminado)*60
-                segundo_si_terminado = int(segundo_si_terminado)
-                hora_si_terminado = hora_si_terminado-hora
-                minuto_si_terminado = minuto_si_terminado-minuto
-                segundo_si_terminado = segundo_si_terminado-segundo
-                sumatoria = hora_si_terminado+minuto_si_terminado+segundo_si_terminado
-                hora = 0
-                minuto = 0
-                segundo = 0
-                while True:
-                    if sumatoria - 3600 >= 0:
-                        hora += 1
-                        sumatoria -= 3600
-                    else:
-                        break
-                while True:
-                    if sumatoria - 60 >= 0:
-                        minuto += 1
-                        sumatoria -= 60
-                    else:
-                        break
-                segundo = sumatoria 
-                tiempo_durado = str(hora)+" "+"HORAS CON"+" "+str(minuto)+" "+"MINUTOS Y"+" "+str(segundo)+" "+"SEGUNDOS"
-                mensaje = messagebox.showinfo(message="¡EXCELENTE! JUEGO TERMINADO CON ÉXITO, HA TARDADO: "+tiempo_durado)
+        parada_final = True # SI TODOS LOS DATOS TIENE NUMERO SE TERMINO EL JUEGO PUES CUMPLEN LAS RENSTRICCIONES
 
-            tiempo_mostrado = texto,hora,":",minuto,":",segundo
-            
-            if dificultad == "FACIL":
-                if len(top_10_facil) < 10:
-                    top_10_facil.append(tiempo_mostrado)
-                    top_10_facil = sorted(top_10_facil, key=lambda x: x[1:])
-                else:
-                    lista_prueba = [top_10_facil[9],tiempo_mostrado]
-                    lista_prueba = sorted(lista_prueba, key=lambda x: x[1:])
-                    top_10_facil[9] = lista_prueba[0]
-                    top_10_facil = sorted(top_10_facil, key=lambda x: x[1:])
-     
-            if dificultad == "MEDIO":
-                if len(top_10_medio) < 10:
-                    top_10_medio.append(tiempo_mostrado)
-                    top_10_medio = sorted(top_10_medio, key=lambda x: x[1:])
-                else:
-                    lista_prueba = [top_10_medio[9],tiempo_mostrado]
-                    lista_prueba = sorted(lista_prueba, key=lambda x: x[1:])
-                    top_10_medio[9] = lista_prueba[0]
-                    top_10_medio = sorted(top_10_medio, key=lambda x: x[1:])
-                    
-            if dificultad == "DIFICIL":
-                if len(top_10_dificil) < 10:
-                    top_10_dificil.append(tiempo_mostrado)
-                    top_10_dificil = sorted(top_10_dificil, key=lambda x: x[1:])
-                else:
-                    lista_prueba = [top_10_dificil[9],tiempo_mostrado]
-                    lista_prueba = sorted(lista_prueba, key=lambda x: x[1:])
-                    top_10_dificil[9] = lista_prueba[0]
-                    top_10_dificil = sorted(top_10_dificil, key=lambda x: x[1:])
-                    
-        if control_reloj == "No":
-            mensaje = messagebox.showinfo(message="¡EXCELENTE! JUEGO TERMINADO CON ÉXITO")
-    
-        if mensaje == "ok":
-            return regreso(ventana_jugar,ventana)
+        if ya_termino == False: # SE ACTIVA ESTO PARA QUE NO SE REPITA EL MENSAJE 
+        
+            if segundo_numero != 0 and minuto_numero != 0 and hora_numero != 0:
+                if control_reloj == "Si":
+                    segundo = segundo_numero["text"]   
+                    minuto = minuto_numero["text"]
+                    hora = hora_numero["text"] # SI ES SI ENTONCES SE IMPRIME EL TIMEPO 
+                    numero_manejado = 0
+                    tiempo_durado = str(hora)+" "+"HORAS CON"+" "+str(minuto)+" "+"MINUTOS Y"+" "+str(segundo)+" "+"SEGUNDOS"
+                    ya_termino = True
+                    mensaje = messagebox.showinfo(message="¡EXCELENTE! JUEGO TERMINADO CON ÉXITO, HA TARDADO: "+tiempo_durado)
+
+                elif control_reloj == "Timer":
+                    segundo = int(segundo_numero["text"])
+                    minuto = int(minuto_numero["text"])*60
+                    hora = int(hora_numero["text"])*3600
+                    numero_manejado = 0
+                    hora_si_terminado = int(hora_si_terminado)*3600
+                    minuto_si_terminado = int(minuto_si_terminado)*60 # SI ES TIMER SE REALIZA LA RESTA CON EL TIEMPO INICIAL Y SE IMPRIME 
+                    segundo_si_terminado = int(segundo_si_terminado)
+                    hora_si_terminado = hora_si_terminado-hora
+                    minuto_si_terminado = minuto_si_terminado-minuto
+                    segundo_si_terminado = segundo_si_terminado-segundo
+                    sumatoria = hora_si_terminado+minuto_si_terminado+segundo_si_terminado
+                    hora = 0
+                    minuto = 0
+                    segundo = 0
+                    ya_termino = True
+                    while True:
+                        if sumatoria - 3600 >= 0:
+                            hora += 1
+                            sumatoria -= 3600
+                        else:
+                            break # CICLOS PARA CALCULAR EL TIEMPO 
+                    while True:
+                        if sumatoria - 60 >= 0:
+                            minuto += 1
+                            sumatoria -= 60
+                        else:
+                            break
+                    segundo = sumatoria 
+                    tiempo_durado = str(hora)+" "+"HORAS CON"+" "+str(minuto)+" "+"MINUTOS Y"+" "+str(segundo)+" "+"SEGUNDOS"
+                    mensaje = messagebox.showinfo(message="¡EXCELENTE! JUEGO TERMINADO CON ÉXITO, HA TARDADO: "+tiempo_durado)
+
+                tiempo_mostrado = texto,hora,":",minuto,":",segundo
+                
+                if dificultad == "FACIL":
+                    if len(top_10_facil) < 10:
+                        top_10_facil.append(tiempo_mostrado)
+                        top_10_facil = sorted(top_10_facil, key=lambda x: x[1:])
+                    else:
+                        lista_prueba = [top_10_facil[9],tiempo_mostrado]
+                        lista_prueba = sorted(lista_prueba, key=lambda x: x[1:]) # DEPENDIENDO DE LA DIFICULTAD SE GUARDA EN LA LISTA 
+                        top_10_facil[9] = lista_prueba[0]
+                        top_10_facil = sorted(top_10_facil, key=lambda x: x[1:])
+         
+                if dificultad == "MEDIO":
+                    if len(top_10_medio) < 10:
+                        top_10_medio.append(tiempo_mostrado)
+                        top_10_medio = sorted(top_10_medio, key=lambda x: x[1:])
+                    else:
+                        lista_prueba = [top_10_medio[9],tiempo_mostrado]
+                        lista_prueba = sorted(lista_prueba, key=lambda x: x[1:]) # DEPENNDIENDO DEL TIEMPO SE CALCULA SI SE GUARDA EN EL TOP 10 
+                        top_10_medio[9] = lista_prueba[0]
+                        top_10_medio = sorted(top_10_medio, key=lambda x: x[1:])
+                        
+                if dificultad == "DIFICIL":
+                    if len(top_10_dificil) < 10:
+                        top_10_dificil.append(tiempo_mostrado)
+                        top_10_dificil = sorted(top_10_dificil, key=lambda x: x[1:])
+                    else:
+                        lista_prueba = [top_10_dificil[9],tiempo_mostrado]
+                        lista_prueba = sorted(lista_prueba, key=lambda x: x[1:])
+                        top_10_dificil[9] = lista_prueba[0]
+                        top_10_dificil = sorted(top_10_dificil, key=lambda x: x[1:])
+                        
+            if control_reloj == "No":
+                ya_termino = True
+                mensaje = messagebox.showinfo(message="¡EXCELENTE! JUEGO TERMINADO CON ÉXITO") # SI ES NO SIMPLEMENTE SE IMPRIME UN MENSAJE 
+        
+            if mensaje == "ok":
+                return regreso(ventana_jugar,ventana)
     
     terminado.after(1000,ganador)
     
@@ -7510,8 +7539,8 @@ faciles = [((0,0,">"),(0,1),(0,2),(0,3,">"),(0,4),
            ((0,0,"<"),(0,1),(0,2,"3"),(0,3,"<"),(0,4),
   (1,0),(1,1,"1"),(1,2),(1,3),(1,4),
   (2,0),(2,1),(2,2),(2,3),(2,4),
-  (3,0),(3,1,"5"),(3,2),(3,3),(3,4),
-  (4,0,">"),(4,1),(4,2),(4,3),(4,4,">"))]
+  (3,0),(3,1,"5"),(3,2),(3,3),(3,4), 
+  (4,0,">"),(4,1),(4,2),(4,3),(4,4,">"))] # SE ARCHIVAN LOS JUEGOS 
 
 medianas = [((0,0),(0,1),(0,2),(0,3),(0,4),
   (1,0),(1,1),(1,2),(1,3,">"),(1,4),
@@ -7543,18 +7572,25 @@ dificiles = [((0,0),(0,1,"1"),(0,2),(0,3,">"),(0,4,">"),
   (1,0,">"),(1,1),(1,2),(1,3,">"),(1,4,">"),
   (2,0),(2,1,"2"),(2,2),(2,3,">"),(2,4,">"),
   (3,0),(3,1),(3,2),(3,3,"4"),(3,4,"<"),
-  (4,0,"5"),(4,1),(4,2),(4,3,">"),(4,4,"<"))]
+  (4,0,"5"),(4,1),(4,2),(4,3,">"),(4,4,"<"))] # SE ARCHIVAN LOS JUEGOS 
 
 
 pickle.dump(faciles,archiv_partida)
 pickle.dump("\n",archiv_partida)
 pickle.dump(medianas,archiv_partida)
 pickle.dump("\n",archiv_partida)
-pickle.dump(dificiles,archiv_partida)
+pickle.dump(dificiles,archiv_partida) # SE ARCHIVAN LOS JUEGOS 
 
 archiv_partida.close()
 
-archiv_config =open("futoshiki2021configuración.dat","wb")
+archiv_config =open("futoshiki2021configuración.dat","w")
+
+archiv_config.write("\nNivel: " + dificultad)
+archiv_config.write("\nReloj: " + control_reloj)
+archiv_config.write("\nPanel: " + panel)
+
+archiv_config.close()
+
 archiv_juego =open("futoshiki2021juegoactual.dat","wb")
 archiv_top =open("futoshiki2021top10.dat","wb")
 
@@ -7568,7 +7604,7 @@ futoshiki.config(bg="#B9FFDE")
 futoshiki.place(x=60,y=50)
 
 borde1 = tkinter.Canvas(ventana, bg="#FFB9FE", height=10, width=10).place(x=50,y=46)
-borde2 = tkinter.Canvas(ventana, bg="#99FFA6", height=10, width=10).place(x=35,y=28)
+borde2 = tkinter.Canvas(ventana, bg="#99FFA6", height=10, width=10).place(x=35,y=28) # CREACION DE LA VENTANA PRINCIPAL 
 borde3 = tkinter.Canvas(ventana, bg="#99FFA6", height=10, width=10).place(x=70,y=35)
 borde4 = tkinter.Canvas(ventana, bg="#FFB9FE", height=10, width=10).place(x=28,y=58)
 
