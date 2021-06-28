@@ -2,6 +2,7 @@
 
 import tkinter
 import random
+import pickle
 from tkinter import messagebox
 
 #===============================================VARIABLES===============================================#
@@ -109,6 +110,8 @@ juego_cargado = False
 
 botton_guardar = 0
 botton_cargar = 0
+
+desplegar = 0
 
 #================================================JUEGO 1================================================#
 
@@ -6642,10 +6645,12 @@ def tiempo():
                 actualizar = tkinter.Label()
                 actualizar.after(1000,tiempo)
 
-    elif juego_cargado == False:
-        minuto_numero.config(text=0)
-        segundo_numero.config(text=0)
-        hora_numero.config(text=0)
+    if juego_cargado == False:
+        if iniciar_activado == False:
+            minuto_numero.config(text=0)
+            segundo_numero.config(text=0)
+            hora_numero.config(text=0)
+        
     juego_cargado = False
 
 def borrar_el_juego(ventana_jugar):
@@ -6670,6 +6675,10 @@ def terminar_juego(ventana_jugar):
             return jugar()
 
 def regreso(x,y):
+    
+    global juego_cargado
+    juego_cargado = False
+
     x.destroy()
     y.deiconify()
 
@@ -6737,6 +6746,7 @@ def top_10_todos():
     global top_10_medio
     global top_10_dificil
     global parada_final
+    global archiv_top
 
     ventana_top = tkinter.Tk()
     ventana_top.title("LOS MEJORES")
@@ -6775,7 +6785,7 @@ def top_10_todos():
         for x in elemento[1:]:
             clock = clock+str(x)
     
-        top_facil = tkinter.Label(ventana_top,text=str(ind)+" - "+elemento[0]+" - "+clock)
+        top_facil = tkinter.Label(ventana_top,text=str(ind)+" - "+elemento[0]+" - "+clock,bg="#E5E5E5")
         top_facil.place(x=40,y=y_todos)
         y_todos+=20
 
@@ -6788,7 +6798,7 @@ def top_10_todos():
         for x in elemento[1:]:
             clock = clock+str(x)
             
-        top_medio = tkinter.Label(ventana_top,text=str(ind)+" - "+elemento[0]+" - "+clock)
+        top_medio = tkinter.Label(ventana_top,text=str(ind)+" - "+elemento[0]+" - "+clock,bg="#E5E5E5")
         top_medio.place(x=270,y=y_todos)
         y_todos+=20
 
@@ -6801,9 +6811,17 @@ def top_10_todos():
         for x in elemento[1:]:
             clock = clock+str(x)
             
-        top_medio = tkinter.Label(ventana_top,text=str(ind)+" - "+elemento[0]+" - "+clock)
+        top_medio = tkinter.Label(ventana_top,text=str(ind)+" - "+elemento[0]+" - "+clock,bg="#E5E5E5")
         top_medio.place(x=500,y=y_todos)
         y_todos+=20
+
+    archiv_top =open("futoshiki2021top10.dat","w")
+
+    archiv_top.write("\nFacil: " + str(top_10_facil))
+    archiv_top.write("\nMedio: " + str(top_10_medio))
+    archiv_top.write("\nDificl: " + str(top_10_dificil))
+    archiv_top.close()
+    
 
 #=======================================================================================================#
 def guardar_game():
@@ -6876,7 +6894,9 @@ def guardar_game():
 
     global guardar_hora
     global guardar_minuto
-    global guardar_segundo 
+    global guardar_segundo
+
+    global desplegar
 
     guardar_casilla1_1 = casilla1_1["text"]
     guardar_casilla1_2 = casilla1_2["text"]
@@ -6913,6 +6933,42 @@ def guardar_game():
     guardar_minuto = minuto_numero["text"]
     guardar_segundo = segundo_numero["text"]
 
+    archiv_juego =open("futoshiki2021juegoactual.dat","w")
+
+    archiv_juego.write("\nCasilla1_1: " + str(guardar_casilla1_1))
+    archiv_juego.write("\nCasilla1_2: " + str(guardar_casilla1_2))
+    archiv_juego.write("\nCasilla1_3: " + str(guardar_casilla1_3))
+    archiv_juego.write("\nCasilla1_4: " + str(guardar_casilla1_4))
+    archiv_juego.write("\nCasilla1_5: " + str(guardar_casilla1_5))
+    archiv_juego.write("\nCasilla2_1: " + str(guardar_casilla2_1))
+    archiv_juego.write("\nCasilla2_2: " + str(guardar_casilla2_2))
+    archiv_juego.write("\nCasilla2_3: " + str(guardar_casilla2_3))
+    archiv_juego.write("\nCasilla2_4: " + str(guardar_casilla2_4))
+    archiv_juego.write("\nCasilla2_5: " + str(guardar_casilla2_5))
+    archiv_juego.write("\nCasilla3_1: " + str(guardar_casilla3_1))
+    archiv_juego.write("\nCasilla3_2: " + str(guardar_casilla3_2))
+    archiv_juego.write("\nCasilla3_3: " + str(guardar_casilla3_3))
+    archiv_juego.write("\nCasilla3_4: " + str(guardar_casilla3_4))
+    archiv_juego.write("\nCasilla3_5: " + str(guardar_casilla3_5))
+    archiv_juego.write("\nCasilla4_1: " + str(guardar_casilla4_1))
+    archiv_juego.write("\nCasilla4_2: " + str(guardar_casilla4_2))
+    archiv_juego.write("\nCasilla4_3: " + str(guardar_casilla4_3))
+    archiv_juego.write("\nCasilla4_4: " + str(guardar_casilla4_4))
+    archiv_juego.write("\nCasilla4_5: " + str(guardar_casilla4_5))
+    archiv_juego.write("\nCasilla5_1: " + str(guardar_casilla5_1))
+    archiv_juego.write("\nCasilla5_2: " + str(guardar_casilla5_2))
+    archiv_juego.write("\nCasilla5_3: " + str(guardar_casilla5_3))
+    archiv_juego.write("\nCasilla5_4: " + str(guardar_casilla5_4))
+    archiv_juego.write("\nCasilla5_5: " + str(guardar_casilla5_5))
+    
+    archiv_juego.write("\nReloj: " + guardar_control_reloj)
+    archiv_juego.write("\nPanel: " + guardar_panel)
+    archiv_juego.write("\nSuerte: " + str(guardar_suerte))
+
+    archiv_juego.close()
+
+    desplegar += 1
+
 def cargar_game(x):
     
     global guardar_dificultad
@@ -6934,6 +6990,9 @@ def cargar_game(x):
     global guardar_segundo 
 
     global juego_cargado
+
+    if desplegar == 0:
+        return messagebox.showinfo(message="NADA PARA DESPLEGAR")
 
     juego_cargado = True
 
@@ -7131,6 +7190,14 @@ def config():
     global dificultad
     global control_reloj
     global panel
+
+    archiv_config =open("futoshiki2021configuración.dat","w")
+
+    archiv_config.write("\nNivel: " + dificultad)
+    archiv_config.write("\nReloj: " + control_reloj)
+    archiv_config.write("\nPanel: " + panel)
+
+    archiv_config.close()
       
     ventana.state(newstate="withdraw")
     ventana_config = tkinter.Tk()
@@ -7427,7 +7494,70 @@ def ganador():
     terminado.after(1000,ganador)
     
 #===============================================PRINCIPAL===============================================#
-    
+
+archiv_partida =open("futoshiki2021partidas.dat","wb")
+
+faciles = [((0,0,">"),(0,1),(0,2),(0,3,">"),(0,4),
+  (1,0,"1"),(1,1),(1,2),(1,3),(1,4),
+  (2,0),(2,1),(2,2),(2,3),(2,4),
+  (3,0),(3,1),(3,2),(3,3,"4"),(3,4),
+  (4,0),(4,1),(4,2),(4,3),(4,4,">")),
+           ((0,0),(0,1),(0,2),(0,3),(0,4,"2"),
+  (1,0),(1,1,"2"),(1,2),(1,3),(1,4),
+  (2,0),(2,1,"<"),(2,2,"<", ">"),(2,3,">"),(2,4),
+  (3,0),(3,1),(3,2),(3,3),(3,4),
+  (4,0),(4,1),(4,2),(4,3),(4,4,"4")),
+           ((0,0,"<"),(0,1),(0,2,"3"),(0,3,"<"),(0,4),
+  (1,0),(1,1,"1"),(1,2),(1,3),(1,4),
+  (2,0),(2,1),(2,2),(2,3),(2,4),
+  (3,0),(3,1,"5"),(3,2),(3,3),(3,4),
+  (4,0,">"),(4,1),(4,2),(4,3),(4,4,">"))]
+
+medianas = [((0,0),(0,1),(0,2),(0,3),(0,4),
+  (1,0),(1,1),(1,2),(1,3,">"),(1,4),
+  (2,0),(2,1),(2,2),(2,3),(2,4),
+  (3,0,"<"),(3,1),(3,2),(3,3,">","<"),(3,4,">"),
+  (4,0),(4,1),(4,2),(4,3,">"),(4,4,">")),
+           ((0,0),(0,1),(0,2),(0,3),(0,4),
+  (1,0),(1,1),(1,2,"4"),(1,3,"<"),(1,4),
+  (2,0),(2,1),(2,2),(2,3),(2,4),
+  (3,0,"<"),(3,1),(3,2),(3,3,"<",">"),(3,4,">"),
+  (4,0),(4,1),(4,2),(4,3,">"),(4,4,">")),
+           ((0,0),(0,1,"2"),(0,2,">"),(0,3),(0,4),
+  (1,0,"<"),(1,1),(1,2),(1,3),(1,4),
+  (2,0),(2,1),(2,2),(2,3,">","<"),(2,4),
+  (3,0),(3,1),(3,2),(3,3,"4"),(3,4,"1"),
+  (4,0,">"),(4,1),(4,2,"<"),(4,3),(4,4))]
+
+dificiles = [((0,0),(0,1,"1"),(0,2),(0,3,">"),(0,4,">"),
+  (1,0,"<"),(1,1),(1,2),(1,3),(1,4),
+  (2,0),(2,1),(2,2),(2,3,">"),(2,4),
+  (3,0,"<"),(3,1),(3,2,">","<"),(3,3),(3,4,"<"),
+  (4,0,"<"),(4,1,"<"),(4,2),(4,3,">"),(4,4,">")),
+           ((0,0,">"),(0,1),(0,2),(0,3,">"),(0,4),
+  (1,0,">"),(1,1),(1,2),(1,3,">"),(1,4,">"),
+  (2,0),(2,1,"2"),(2,2),(2,3,">"),(2,4,">"),
+  (3,0,"2"),(3,1),(3,2),(3,3),(3,4,"<"),
+  (4,0,">"),(4,1,"<"),(4,2),(4,3),(4,4)),
+           ((0,0,">"),(0,1),(0,2),(0,3,">"),(0,4),
+  (1,0,">"),(1,1),(1,2),(1,3,">"),(1,4,">"),
+  (2,0),(2,1,"2"),(2,2),(2,3,">"),(2,4,">"),
+  (3,0),(3,1),(3,2),(3,3,"4"),(3,4,"<"),
+  (4,0,"5"),(4,1),(4,2),(4,3,">"),(4,4,"<"))]
+
+
+pickle.dump(faciles,archiv_partida)
+pickle.dump("\n",archiv_partida)
+pickle.dump(medianas,archiv_partida)
+pickle.dump("\n",archiv_partida)
+pickle.dump(dificiles,archiv_partida)
+
+archiv_partida.close()
+
+archiv_config =open("futoshiki2021configuración.dat","wb")
+archiv_juego =open("futoshiki2021juegoactual.dat","wb")
+archiv_top =open("futoshiki2021top10.dat","wb")
+
 ventana = tkinter.Tk()
 ventana.title("VENTANA PRINCIPAL")
 ventana.geometry("300x200")
